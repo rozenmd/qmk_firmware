@@ -19,12 +19,16 @@
 #define SH_ESC  SFT_T(KC_ESC)
 #define ALT_ENT ALT_T(KC_ENT)
 
+#define CT_ESC  CTL_T(KC_ESC)
+#define SH_ENT  SFT_T(KC_ENT)
+#define ALT_ESC ALT_T(KC_ESC)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_DV] = LAYOUT(
     KC_SCLN, KC_COMM, KC_DOT,  KC_P,    KC_Y,                      KC_F,    KC_G,    KC_C,    KC_R,    KC_L ,
     KC_A,    KC_O,    KC_E,    KC_U,    KC_I,                      KC_D,    KC_H,    KC_T,    KC_N,    KC_S ,
-    CT_QUOT, KC_Q,    KC_J,    KC_K,    KC_X,                      KC_B,    KC_M,    KC_W,    KC_V,    KC_Z ,
-    KC_ESC,  KC_TAB,  KC_LGUI, SH_ESC,  KC_BSPC, MO(_RS), KC_LCTL, KC_SPC,  ALT_ENT, KC_MINS, KC_SLSH, KC_ENT
+    KC_QUOT, KC_Q,    KC_J,    KC_K,    KC_X,                      KC_B,    KC_M,    KC_W,    KC_V,    KC_Z ,
+    CT_ESC,  KC_TAB,  KC_LGUI, SH_ENT,  KC_BSPC, MO(_RS), KC_LCTL, KC_SPC,  ALT_ESC, KC_MINS, KC_SLSH, KC_ENT
   ),
 
   /*
