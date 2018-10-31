@@ -22,31 +22,39 @@
 #define CT_ESC  CTL_T(KC_ESC)
 #define SH_ENT  SFT_T(KC_ENT)
 #define ALT_ESC ALT_T(KC_ESC)
+#define RS_SPC  LT(_RS, KC_SPC)
+#define ALBSPC  ALT_T(KC_BSPC)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+  /*
+   *  ;        ,        .         p        y            ||          f        g       c         r        l
+   *  a        o        e         u        i            ||          d        h       t         n        s
+   *  '        q        j         k        j            ||          b        m       w         v        z
+   * Esc      Tab      Win     SH/Ent   ALT/Bsp RAISE   || Ctrl   RAISE/Spc  ALT/Esc   -         /       Ent
+   */
   [_DV] = LAYOUT(
-    KC_SCLN, KC_COMM, KC_DOT,  KC_P,    KC_Y,                      KC_F,    KC_G,    KC_C,    KC_R,    KC_L ,
-    KC_A,    KC_O,    KC_E,    KC_U,    KC_I,                      KC_D,    KC_H,    KC_T,    KC_N,    KC_S ,
-    CT_QUOT, KC_Q,    KC_J,    KC_K,    KC_X,                      KC_B,    KC_M,    KC_W,    KC_V,    KC_Z ,
-    KC_ESC,  KC_TAB,  KC_LGUI, SH_ENT,  KC_BSPC, MO(_RS), KC_LCTL, KC_SPC,  ALT_ESC, KC_MINS, KC_SLSH, KC_ENT
-  ),
+    KC_SCLN, KC_COMM, KC_DOT,  KC_P,    KC_Y,                      KC_F,    KC_G,    KC_C,    KC_R,    KC_L   ,
+    KC_A,    KC_O,    KC_E,    KC_U,    KC_I,                      KC_D,    KC_H,    KC_T,    KC_N,    KC_S   ,
+    CT_QUOT, KC_Q,    KC_J,    KC_K,    KC_X,                      KC_B,    KC_M,    KC_W,    KC_V,    KC_Z   ,
+    KC_ESC,  KC_TAB,  KC_LGUI, SH_ENT,  ALBSPC, MO(_RS), KC_LCTL,  RS_SPC,  ALT_ESC, KC_MINS, KC_SLSH, KC_ENT ),
 
   /*
-   *  !       @     up     {    }        ||     pgup    7     8     9    *
-   *  #     left   down  right  $        ||     pgdn    4     5     6    +
-   *  [       ]      (     )    &        ||       `     1     2     3    \
-   * lower  insert super shift bksp ctrl || alt space   fn    .     0    =
+   *  !        @       Up        {        }             ||           \        7       8       9         *
+   *  #      Left     Down     Right      $             ||           =        4       5       6         +
+   *  [        ]        (        )        &             ||           `        1       2       3        PgUp
+   * Lwr      Ins      Win     Shift     Delete  Trans  ||   Ctrl   Spc     ALT/Ent   0       .        PgDn
    */
   [_RS] = LAYOUT( /* [> RAISE <] */
     KC_EXLM, KC_AT,   KC_UP,   KC_LCBR, KC_RCBR,                   KC_BSLS, KC_7,    KC_8,   KC_9,   KC_ASTR ,
     KC_HASH, KC_LEFT, KC_DOWN, KC_RGHT, KC_DLR,                    KC_EQL,  KC_4,    KC_5,   KC_6,   KC_PLUS ,
     KC_LBRC, KC_RBRC, KC_LPRN, KC_RPRN, KC_AMPR,                   KC_GRV,  KC_1,    KC_2,   KC_3,   KC_PGUP ,
     TG(_LW), KC_INS,  KC_LGUI, KC_LSFT, KC_DELT, KC_TRNS, KC_LCTL, KC_SPC,  ALT_ENT, KC_0,   KC_DOT, KC_PGDN ),
+
   /*
-   * insert home   up  end   pgup       ||      up     F7    F8    F9   F10
-   *  del   left  down right pgdn       ||     down    F4    F5    F6   F11
-   *       volup             reset      ||             F1    F2    F3   F12
-   *       voldn  super shift bksp ctrl || alt space   L0  prtsc scroll pause
+   *  Ins    Home       Up       End      PgUp          ||          Up       F7       F8       F9      F10
+   *  Del    Left      Down      Right    PgDown        ||         Down      F4       F5       F6      F11
+   *         VolUp                        RESET         ||        QWERTY     F1       F2       F3      F12
+   *         VolDn      Win      Shift    Bspc   DVORAK || Ctrl    space   ALT/Ent   PrtSc   ScrLk    Pause
    */
   [_LW] = LAYOUT( /* [> LOWER <] */
     KC_INS,  KC_HOME, KC_UP,   KC_END,  KC_PGUP,                   KC_UP,   KC_F7,   KC_F8,   KC_F9,   KC_F10  ,
@@ -58,7 +66,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,   KC_W,   KC_E,    KC_R,    KC_T,                      KC_Y,   KC_U,    KC_I,    KC_O,    KC_P    ,
     KC_A,   KC_S,   KC_D,    KC_F,    KC_G,                      KC_H,   KC_J,    KC_K,    KC_L,    KC_SCLN ,
     CT_Z,   KC_X,   KC_C,    KC_V,    KC_B,                      KC_N,   KC_M,    KC_COMM, KC_DOT,  KC_SLSH ,
-    KC_ESC, KC_TAB, KC_LGUI, SH_ESC,  KC_BSPC, MO(_QR), KC_LCTL, KC_SPC, ALT_ENT, KC_MINS, KC_SLSH, KC_ENT ),
+    KC_ESC, KC_TAB, KC_LGUI, SH_ENT,  ALBSPC, MO(_QR), KC_LCTL,  RS_SPC,  ALT_ESC, KC_MINS, KC_SLSH, KC_ENT ),
 
   [_QR] = LAYOUT(
     KC_EXLM, KC_AT,   KC_UP,   KC_LCBR, KC_RCBR,                   KC_BSLS, KC_7,    KC_8,   KC_9,   KC_ASTR ,
