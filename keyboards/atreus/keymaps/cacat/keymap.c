@@ -17,19 +17,19 @@
 
 #define _____   KC_TRNS
 
+#define ALBSPC  ALT_T(KC_BSPC)
+#define ALT_ENT ALT_T(KC_ENT)
+#define ALT_ESC ALT_T(KC_ESC)
+#define CT_A    CTL_T(KC_A)
+#define CT_ESC  CTL_T(KC_ESC)
 #define CT_QUOT CTL_T(KC_QUOT)
 #define CT_Z    CTL_T(KC_Z)
-#define SH_ESC  SFT_T(KC_ESC)
-#define ALT_ENT ALT_T(KC_ENT)
-
-#define ALBSPC  ALT_T(KC_BSPC)
-#define ALT_ESC ALT_T(KC_ESC)
-#define CT_ESC  CTL_T(KC_ESC)
-#define GI_J    LGUI_T(KC_J)
 #define DL_BSPC LT(_DL, KC_BSPC)
 #define DR_SPC  LT(_DR, KC_SPC)
+#define GI_Q    LGUI_T(KC_Q)
 #define QR_SPC  LT(_QR, KC_SPC)
 #define SH_ENT  SFT_T(KC_ENT)
+#define SH_ESC  SFT_T(KC_ESC)
 #define SH_Z    SFT_T(KC_Z)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -42,14 +42,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_DV] = LAYOUT(
     KC_SCLN, KC_COMM, KC_DOT,  KC_P,    KC_Y,                       KC_F,    KC_G,    KC_C,    KC_R,    KC_L   ,
     KC_A,    KC_O,    KC_E,    KC_U,    KC_I,                       KC_D,    KC_H,    KC_T,    KC_N,    KC_S   ,
-    CT_QUOT, KC_Q,    GI_J,    KC_K,    KC_X,                       KC_B,    KC_M,    KC_W,    KC_V,    SH_Z   ,
+    CT_QUOT, GI_Q,    KC_J,    KC_K,    KC_X,                       KC_B,    KC_M,    KC_W,    KC_V,    SH_Z   ,
     KC_ESC,  KC_TAB,  KC_LGUI, SH_ENT,  DL_BSPC, MO(_DR), KC_LCTL,  DR_SPC,  ALT_ESC, KC_MINS, KC_SLSH, KC_ENT ),
 
   [_DL] = LAYOUT( /* [> LOWER <] */
-    KC_ESC,  _____,   _____, KC_F1, KC_F2,                   KC_F3,  KC_F4,  _____, KC_DELT, KC_BSPC ,
-    KC_TAB,  KC_LALT, _____, KC_F5, KC_F6,                   KC_F7,  KC_F8,  _____, _____,   KC_ENT  ,
-    KC_LSFT, _______, _____, KC_F9, KC_F10,                  KC_F11, KC_F12, _____, KC_MINS, KC_SLSH ,
-    _____,   _____,   _____, _____, _____, KC_LALT, KC_LCTL, _____,  _____,  _____, _____,   _____   ),
+    KC_ESC,  _____, _____, KC_F1, KC_F2,                   KC_F3,  KC_F4,  _____, KC_DELT, KC_BSPC ,
+    KC_TAB,  _____, _____, KC_F5, KC_F6,                   KC_F7,  KC_F8,  _____, KC_LALT, KC_ENT  ,
+    KC_LSFT, _____, _____, KC_F9, KC_F10,                  KC_F11, KC_F12, _____, KC_MINS, KC_SLSH ,
+    _____,   _____, _____, _____, _____, KC_LALT, KC_LCTL, _____,  _____,  _____, _____,   _____   ),
 
   /*
    *  !        @       Up        {        }             ||           \        7       8       9         *
