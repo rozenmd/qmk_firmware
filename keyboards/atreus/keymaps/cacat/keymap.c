@@ -47,10 +47,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_ESC,  KC_TAB,  KC_LGUI, SH_ENT,  DL_BSPC, MO(_DR), KC_LCTL,  DR_SPC,  ALT_ESC, KC_MINS, KC_SLSH, KC_ENT ),
 
   [_DL] = LAYOUT( /* [> LOWER <] */
-    KC_ESC,  _____,  _____,   KC_F1, KC_F2,                    KC_F3,  KC_F4,  KC_INS,  KC_DELT, KC_BSPC ,
-    KC_TAB,  KC_TAB, KC_PGUP, KC_F5, KC_F6,                    KC_F7,  KC_F8,  KC_HOME, KC_LALT, KC_ENT  ,
-    KC_LSFT, _____,  KC_PGDN, KC_F9, KC_F10,                   KC_F11, KC_F12, KC_END,  KC_MINS, KC_SLSH ,
-    _____,   _____,  _____,   _____, _____,  KC_LALT, KC_LCTL, _____,  _____,  _____,   _____,   _____   ),
+    KC_ESC,  KC_PSCR, KC_PAUS, KC_F1, KC_F2,                    KC_F3,  KC_F4,  KC_INS,  KC_DELT, KC_BSPC ,
+    KC_CLCK, KC_TAB,  KC_PGUP, KC_F5, KC_F6,                    KC_F7,  KC_F8,  KC_HOME, KC_LALT, KC_ENT  ,
+    KC_LSFT, KC_SLCK, KC_PGDN, KC_F9, KC_F10,                   KC_F11, KC_F12, KC_END,  KC_MINS, KC_SLSH ,
+    _____,   _____,   _____,   _____, _____,  KC_LALT, KC_LCTL, _____,  _____,  _____,   _____,   _____   ),
 
   /*
    *  !        @       Up        {        }             ||           \        7       8       9         *
