@@ -34,26 +34,29 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_SCLN, KC_Q,    KC_J,    KC_K,  KC_X,                      KC_N,   KC_M,    KC_W,    KC_V,   KC_Z, \
            KC_TAB,  KC_LGUI,                                                    KC_MINS, KC_SLSH,      \
                              LOWER,                                    RAISE,                          \
-                                    KB_BSPC, KC_ESC,  KC_ENT,  KC_SPC,                                 \
-                                    KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI),
+                                    KC_BSPC, KC_ESC,  KC_ENT,  KC_SPC,                                 \
+                                    KC_LSFT, KC_LCTL, KC_LALT, KC_DEL
+),
 
 [_RAISE] = LAYOUT( \
-  ____, ____,  KC_MU, ____,  ____,                          KC_VOLU, ____,    KC_UP,   ____,     KC_PGUP,   \
-  ____, KC_ML, KC_MD, KC_MR, ____,                          KC_MUTE, KC_LEFT, KC_DOWN, KC_RIGHT, KC_PGDOWN, \
-  ____, ____,  ____,  ____,  ____,                          KC_VOLD, KC_SLSH, KC_BSLS, KC_QUES,  KC_PIPE,   \
-               ____,  ____,                                          KC_MB1,  KC_MB2,                       \
-                              ____,  ____,                                                       \
-                              ____, ____,  ____, ____,                                                 \
-                              ____, ____,  ____, ____),
+  KC_EXLM, KC_AT,   KC_UP,   KC_LCBR, KC_RCBR,               KC_BSLS, KC_7, KC_8, KC_9, KC_ASTR, \
+  KC_HASH, KC_LEFT, KC_DOWN, KC_RGHT, KC_DLR,                KC_EQL,  KC_4, KC_5, KC_6, KC_PLUS, \
+  KC_LBRC, KC_RBRC, KC_LPRN, KC_RPRN, KC_AMPR,               KC_GRV,  KC_1, KC_2, KC_3, KC_SLSH, \
+           KC_INS,  ____,                                                  KC_0, KC_DOT,         \
+                             ____,                                    ____,                      \
+                                      ____,    ____,  ____,  ____,                               \
+                                      ____,    ____,  ____,  ____
+),
 
 [_LOWER] = LAYOUT( \
-  KC_F1,   KC_F2,  KC_F3,   KC_F4,  KC_F5,                            KC_F6,   KC_F7,    KC_F8,   KC_F9,   KC_F10,  \
-  KC_1,    KC_2,   KC_3,    KC_4,   KC_5,                             KC_6,    KC_7,     KC_8,    KC_9,    KC_0,    \
-  KC_EXLM, KC_AT,  KC_HASH, KC_DLR, KC_PERC,                          KC_CIRC, KC_AMPR,  KC_ASTR, KC_LPRN, KC_RPRN, \
-           KC_F11, KC_F12,                                                               ____,    ____,             \
-                                                   ____,  ____,                                                     \
-                                             ____, ____,  ____, ____,                                               \
-                                             ____, ____,  ____, ____)
+  KC_ESC,  KC_PSCR, KC_PAUS, KC_F1, KC_F2,               KC_F3,  KC_F4,  KC_INS,  KC_DELT, KC_BSPC, \
+  KC_CLCK, KC_TAB,  KC_PGUP, KC_F5, KC_F6,               KC_F7,  KC_F8,  KC_HOME, KC_LALT, KC_ENT,  \
+  KC_LSFT, KC_SLCK, KC_PGDN, KC_F9, KC_F10,              KC_F11, KC_F12, KC_END,  KC_MINS, KC_SLSH, \
+           ____,    ____,                                                KC_APP,  ____,             \
+                             ____,                               ____,                              \
+                                    ____,   ____,  ____, ____,                                      \
+                                    ____,   ____,  ____, ____
+)
 };
 
 void persistent_default_layer_set(uint16_t default_layer) {
