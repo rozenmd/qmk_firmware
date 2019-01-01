@@ -41,10 +41,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * Esc      Tab      Win     SH/Ent   ALT/Bsp  RAISE   || Ctrl   RAISE/Spc  ALT/Esc   -         /       Ent
    */
   [_DV] = LAYOUT(
-    KC_SCLN, KC_COMM, KC_DOT,  KC_P,    KC_Y,                       KC_F,    KC_G,    KC_C,    KC_R,    KC_L   ,
-    KC_A,    KC_O,    KC_E,    KC_U,    KC_I,                       KC_D,    KC_H,    KC_T,    KC_N,    KC_S   ,
-    CT_QUOT, KC_Q,    KC_J,    KC_K,    KC_X,                       KC_B,    KC_M,    KC_W,    KC_V,    SH_Z   ,
-    KC_ESC,  KC_TAB,  KC_LGUI, SH_ENT,  DL_BSPC, MO(_DR), KC_LCTL,  DR_SPC,  ALT_ESC, KC_MINS, KC_SLSH, KC_ENT ),
+    KC_SCLN, KC_COMM, KC_DOT,  KC_P,    KC_Y,                     KC_F,    KC_G,    KC_C,    KC_R,    KC_L   ,
+    KC_A,    KC_O,    KC_E,    KC_U,    KC_I,                     KC_D,    KC_H,    KC_T,    KC_N,    KC_S   ,
+    KC_QUOT, KC_Q,    KC_J,    KC_K,    KC_X,                     KC_B,    KC_M,    KC_W,    KC_V,    KC_Z   ,
+    KC_ESC,  KC_TAB,  KC_LGUI, SH_ENT,  DL_BSPC, MO(_DR), CT_ESC, DR_SPC,  ALT_ESC, KC_MINS, KC_SLSH, KC_ENT ),
 
   [_DL] = LAYOUT( /* [> LOWER <] */
     KC_ESC,  KC_PSCR, KC_PAUS, KC_F1, KC_F2,                    KC_F3,  KC_F4,  KC_INS,  KC_DELT, KC_BSPC ,
@@ -90,7 +90,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_QL] = LAYOUT(
     KC_INS,  KC_HOME, KC_UP,   KC_END,  KC_PGUP,                   KC_UP,   KC_F7,   KC_F8,   KC_F9,   KC_F10  ,
-    KC_DELT, KC_LEFT, KC_DOWN, KC_RGHT, KC_DOWN,                   KC_DOWN, KC_F4,   KC_F5,   KC_F6,   KC_F11  ,
+    KC_DELT, KC_LEFT, KC_DOWN, KC_RGHT, KC_DOWN,                   KC_DOWN, KC_F4,   KC_F5,   KC_F6,   KC_ENT  ,
     KC_NO,   KC_VOLU, KC_NO,   KC_NO,   RESET,                     TO(_DV), KC_F1,   KC_F2,   KC_F3,   KC_F12  ,
     KC_NO,   KC_VOLD, KC_LGUI, KC_LSFT, KC_BSPC, TO(_DV), KC_LCTL, KC_SPC,  ALT_ENT, KC_PSCR, KC_SLCK, KC_PAUS ),
 };
