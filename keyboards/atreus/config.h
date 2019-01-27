@@ -37,8 +37,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 // Change this to how you wired your keyboard
 // COLS: Left to right, ROWS: Top to bottom
-#define MATRIX_ROW_PINS { D3, F4, F5, D1 }
-#define MATRIX_COL_PINS { F6, B1, F7, B2, B3, B6, B5, B4, E6, D7, C6 }
+// #define MATRIX_ROW_PINS { D3, F4, F5, D1 }
+// #define MATRIX_COL_PINS { F6, B1, F7, B2, B3, B6, B5, B4, E6, D7, C6 }
+#define MATRIX_ROW_PINS { D1, D0, B3, B2 }
+// #define MATRIX_COL_PINS {B5, B4, E6, D7, C6, B6, F4, F5, F6, F7, B1}
+#define MATRIX_COL_PINS {B1, F7, F6, F5, F4, B6, C6, D7, E6, B4, B5}
 
   /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
