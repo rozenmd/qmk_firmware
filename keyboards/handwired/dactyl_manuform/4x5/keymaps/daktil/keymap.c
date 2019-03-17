@@ -4,28 +4,26 @@
 
 extern keymap_config_t keymap_config;
 
-#define _BASE 0
-#define _QWERTY 1
-#define _LOWER 2
-#define _RAISE 3
-#define _ADJUST 4
+#define _BASE    0
+#define _QWERTY  1
+#define _LOWER   2
+#define _RAISE   3
+#define _ADJUST  4
 
-// Fillers to make layering more clear
-
-#define ____ KC_TRNS
+#define ____     KC_TRNS
 
 #define SFT_ESC  SFT_T(KC_ESC)
 #define CTL_BSPC CTL_T(KC_BSPC)
 #define ALT_ENT  ALT_T(KC_ENT)
 
-#define LW_DEL LT(_LOWER, KC_DELT)
-#define RS_ENT LT(_RAISE, KC_ENT)
+#define LW_DEL   LT(_LOWER, KC_DELT)
+#define RS_ENT   LT(_RAISE, KC_ENT)
 
-#define RAISE MO(_RAISE)
-#define LOWER MO(_LOWER)
-#define ADJUST TG(_ADJUST)
-#define REBASE TO(_BASE)
-#define QWERTY TO(_QWERTY)
+#define RAISE    MO(_RAISE)
+#define LOWER    MO(_LOWER)
+#define ADJUST   TG(_ADJUST)
+#define REBASE   TO(_BASE)
+#define QWERTY   TO(_QWERTY)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BASE] = LAYOUT(
@@ -57,13 +55,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                              ____, ____,  ____, ____
 ),
 [_ADJUST] = LAYOUT(
-    ____, ____, ____, ____, ____,                            ____,   ____, ____, ____,   ____,
-    ____, ____, ____, ____, ____,                            ____,   ____, ____, ____,   ____,
-    ____, ____, ____, ____, RESET,                           QWERTY, ____, ____, ____,   ____,
-          ____, ____,                                                      ____, ____,
-                                  ____, ____,  REBASE, ____,
-                                  ____, ____,  ____,   ____,
-                                  ____, ____,  ____,   ____
+    ____, ____, ____,    KC_MPLY, ____,                            ____,   ____,    ____,    ____,   ____,
+    ____, ____, KC_VOLU, ____,    ____,                            ____,   ____,    KC_BRIU, ____,   ____,
+    ____, ____, KC_VOLD, ____,    RESET,                           QWERTY, KC_MUTE, KC_BRID, ____,   ____,
+          ____, ____,                                                               ____, ____,
+                                        ____, ____,  REBASE, ____,
+                                        ____, ____,  ____,   ____,
+                                        ____, ____,  ____,   ____
 ),
 [_QWERTY] = LAYOUT(
     KC_Q, KC_W, KC_E, KC_R, KC_T,                                      KC_Y, KC_U, KC_I,    KC_O,   KC_P    ,
