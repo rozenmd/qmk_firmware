@@ -58,10 +58,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_LCTL,  KC_A,    KC_O,    KC_E,   KC_U, KC_I, ST_GUI,       ST_CTL,  KC_D, KC_H, KC_T, KC_N, KC_S, KC_ENT,
       KC_LSFT,  KC_QUOT, KC_Q,    KC_J,   KC_K, KC_X, ST_ALT,       KC_TRNS, KC_B, KC_M, KC_W, KC_V, KC_Z, KC_RSFT,
 
-                               KC_LGUI, SH_ESC,                                  ALT_ENT, KC_MINS,
+                               KC_LGUI, KC_BSPC,                                  KC_SPC, KC_MINS,
 
-                                                      KC_BTN2,      KC_BTN3,
-                                             KC_BSPC, LW_DEL,       RAISE,    KC_SPC),
+                                                     KC_BTN2,      KC_BTN3,
+                                             SH_ESC, LW_DEL,       RAISE,    ALT_ENT),
 /* Keymap 1: Symbols layer
  *
  * ,-------------------------------------------.                         ,-------------------------------------------.
@@ -87,10 +87,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_LCTL,  KC_HASH, KC_LEFT, KC_DOWN, KC_RGHT, KC_DLR,  ST_GUI, ST_CTL,  KC_EQL,  KC_4, KC_5, KC_6, KC_ENT,  KC_ENT,
       KC_LSFT,  KC_LBRC, KC_RBRC, KC_LPRN, KC_RPRN, KC_AMPR, ST_ALT, KC_TRNS, KC_GRV,  KC_1, KC_2, KC_3, KC_PLUS, KC_RSFT,
 
-                               KC_LGUI, SH_ESC,                                        ALT_ENT, KC_0,
+                               KC_LGUI, KC_BSPC,                                       KC_SPC, KC_0,
 
-                                                      KC_BTN2,                 KC_BTN3,
-                                             KC_BSPC, LOWER,                   RAISE,    KC_SPC),
+                                                     KC_BTN2,                 KC_BTN3,
+                                             SH_ESC, LOWER,                   RAISE,   ALT_ENT),
 /* Keymap 2: Pad/Function layer
  *
  * ,-------------------------------------------.                         ,-------------------------------------------.
@@ -116,10 +116,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_LCTL,  KC_CLCK, KC_TAB,  KC_PGUP, KC_F5, KC_F6,  ST_GUI, ST_CTL,  KC_F7,  KC_F8,  KC_HOME, KC_LALT, KC_ENT,  KC_ENT,
       KC_LSFT,  KC_LSFT, KC_SLCK, KC_PGDN, KC_F9, KC_F10, ST_ALT, KC_TRNS, KC_F11, KC_F12, KC_END,  KC_MINS, KC_SLSH, KC_RSFT,
 
-                               KC_LGUI, SH_ESC,                                        ALT_ENT, KC_APP,
+                               KC_LGUI, KC_BSPC,                                       KC_SPC, KC_APP,
 
-                                                      KC_BTN2,          KC_BTN3,
-                                             KC_BSPC, LOWER,            RAISE,    KC_SPC)
+                                                     KC_BTN2,          KC_BTN3,
+                                             SH_ESC, LOWER,            RAISE,    ALT_ENT)
 };
 
 /* Keymap template
