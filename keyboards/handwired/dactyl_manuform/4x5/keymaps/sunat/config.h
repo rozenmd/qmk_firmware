@@ -23,8 +23,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "../../config.h"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define FORCE_NKRO
 
+=======
+>>>>>>> added sunat
 =======
 >>>>>>> added sunat
 /* Use I2C or Serial, not both */

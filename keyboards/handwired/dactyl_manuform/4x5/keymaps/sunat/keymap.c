@@ -11,6 +11,7 @@ extern keymap_config_t keymap_config;
 #define _RAISE   3
 #define _ADJUST  4
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define _TETIKUS 5
 
 #define ____     KC_TRNS
@@ -36,6 +37,8 @@ extern keymap_config_t keymap_config;
 #define RS_SPC   LT(_RAISE, KC_SPC)
 #define TT_SPC   LT(_TETIKUS, KC_SPC)
 =======
+=======
+>>>>>>> added sunat
 
 #define ____     KC_TRNS
 
@@ -48,6 +51,9 @@ extern keymap_config_t keymap_config;
 #define LW_BSPC  LT(_LOWER, KC_BSPC)
 #define RS_BSPC  LT(_RAISE, KC_BSPC)
 #define RS_SPC   LT(_RAISE, KC_SPC)
+<<<<<<< HEAD
+>>>>>>> added sunat
+=======
 >>>>>>> added sunat
 
 #define RAISE    MO(_RAISE)
@@ -63,9 +69,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_QUOT, KC_Q,    KC_J,    KC_K, KC_X,                                     KC_B, KC_M, KC_W,    KC_V,   KC_Z,
            KC_TAB,  KC_LGUI,                                                             KC_MINS, KC_SLSH,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                          RS_BSPC, SFT_ESC,  RAISE,   TT_SPC,
                                          CTL_TAB, LW_DEL,   ALT_ENT, KC_LCTL,
                                          ____,    ____,     ____,    ____
+=======
+                                         RS_BSPC, SFT_ESC,  RAISE,   KC_SPC,
+                                         KC_LCTL, LW_DEL,   ALT_ENT, KC_LCTL,
+                                         KC_LALT, KC_ESC,   KC_LSFT, KC_LALT
+>>>>>>> added sunat
 =======
                                          RS_BSPC, SFT_ESC,  RAISE,   KC_SPC,
                                          KC_LCTL, LW_DEL,   ALT_ENT, KC_LCTL,
@@ -81,7 +93,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                KC_DELT, ____,    ____, ____,
                                                ____,    ____,    ____, ____,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                ____,    ____,    ____, ____
+=======
+                                               ____,    ADJUST,  ____, ____
+>>>>>>> added sunat
 =======
                                                ____,    ADJUST,  ____, ____
 >>>>>>> added sunat
@@ -110,6 +126,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Z, KC_X, KC_C, KC_V, KC_B,                                      KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH ,
           ____, ADJUST,                                                            KC_MINS, KC_QUOT,
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    RS_BSPC, SFT_ESC,  RAISE,   TT_SPC,
                                    CTL_TAB, LW_DEL,   ALT_ENT, KC_LCTL,
                                    ____,    ____,     ____,    ____
@@ -122,6 +139,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         ____, ____,  ____, ____,
                                         ____, ____,  ____,   ____,
                                         ____, ____,  ____,   ____
+=======
+                                   RS_BSPC, SFT_ESC,  RS_SPC,  KC_SPC,
+                                   KC_LCTL, LW_DEL,   ALT_ENT, KC_LCTL,
+                                   KC_LALT, KC_ESC,   KC_LSFT, KC_LALT
+>>>>>>> added sunat
 =======
                                    RS_BSPC, SFT_ESC,  RS_SPC,  KC_SPC,
                                    KC_LCTL, LW_DEL,   ALT_ENT, KC_LCTL,
