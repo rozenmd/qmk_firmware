@@ -10,6 +10,7 @@ extern keymap_config_t keymap_config;
 #define _LOWER   2
 #define _RAISE   3
 #define _ADJUST  4
+<<<<<<< HEAD
 #define _TETIKUS 5
 
 #define ____     KC_TRNS
@@ -34,6 +35,20 @@ extern keymap_config_t keymap_config;
 #define RS_BSPC  LT(_RAISE, KC_BSPC)
 #define RS_SPC   LT(_RAISE, KC_SPC)
 #define TT_SPC   LT(_TETIKUS, KC_SPC)
+=======
+
+#define ____     KC_TRNS
+
+#define SFT_ESC  SFT_T(KC_ESC)
+#define CTL_BSPC CTL_T(KC_BSPC)
+#define ALT_ENT  ALT_T(KC_ENT)
+
+#define LW_DEL   LT(_LOWER, KC_DELT)
+
+#define LW_BSPC  LT(_LOWER, KC_BSPC)
+#define RS_BSPC  LT(_RAISE, KC_BSPC)
+#define RS_SPC   LT(_RAISE, KC_SPC)
+>>>>>>> added sunat
 
 #define RAISE    MO(_RAISE)
 #define LOWER    MO(_LOWER)
@@ -47,9 +62,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_A,    KC_O,    KC_E,    KC_U, KC_I,                                     KC_D, KC_H, KC_T,    KC_N,   KC_S,
   KC_QUOT, KC_Q,    KC_J,    KC_K, KC_X,                                     KC_B, KC_M, KC_W,    KC_V,   KC_Z,
            KC_TAB,  KC_LGUI,                                                             KC_MINS, KC_SLSH,
+<<<<<<< HEAD
                                          RS_BSPC, SFT_ESC,  RAISE,   TT_SPC,
                                          CTL_TAB, LW_DEL,   ALT_ENT, KC_LCTL,
                                          ____,    ____,     ____,    ____
+=======
+                                         RS_BSPC, SFT_ESC,  RAISE,   KC_SPC,
+                                         KC_LCTL, LW_DEL,   ALT_ENT, KC_LCTL,
+                                         KC_LALT, KC_ESC,   KC_LSFT, KC_LALT
+>>>>>>> added sunat
 ),
 
 [_RAISE] = LAYOUT(
@@ -59,7 +80,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              KC_INS,  ADJUST,                                                         KC_0, KC_DOT,
                                                KC_DELT, ____,    ____, ____,
                                                ____,    ____,    ____, ____,
+<<<<<<< HEAD
                                                ____,    ____,    ____, ____
+=======
+                                               ____,    ADJUST,  ____, ____
+>>>>>>> added sunat
 ),
 [_LOWER] = LAYOUT(
     KC_ESC,  KC_PSCR, KC_PAUS, KC_F1, KC_F2,                           KC_F3,  KC_F4,  KC_INS,  KC_DELT, KC_BSPC ,
@@ -84,6 +109,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_A, KC_S, KC_D, KC_F, KC_G,                                      KC_H, KC_J, KC_K,    KC_L,   KC_SCLN ,
     KC_Z, KC_X, KC_C, KC_V, KC_B,                                      KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH ,
           ____, ADJUST,                                                            KC_MINS, KC_QUOT,
+<<<<<<< HEAD
                                    RS_BSPC, SFT_ESC,  RAISE,   TT_SPC,
                                    CTL_TAB, LW_DEL,   ALT_ENT, KC_LCTL,
                                    ____,    ____,     ____,    ____
@@ -96,6 +122,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                         ____, ____,  ____, ____,
                                         ____, ____,  ____,   ____,
                                         ____, ____,  ____,   ____
+=======
+                                   RS_BSPC, SFT_ESC,  RS_SPC,  KC_SPC,
+                                   KC_LCTL, LW_DEL,   ALT_ENT, KC_LCTL,
+                                   KC_LALT, KC_ESC,   KC_LSFT, KC_LALT
+>>>>>>> added sunat
 ),
 };
 
