@@ -9,6 +9,7 @@ extern keymap_config_t keymap_config;
 #define _LOWER   2
 #define _RAISE   3
 #define _ADJUST  4
+#define _TETIKUS 5
 
 #define ____     KC_TRNS
 
@@ -21,6 +22,7 @@ extern keymap_config_t keymap_config;
 #define LW_BSPC  LT(_LOWER, KC_BSPC)
 #define RS_BSPC  LT(_RAISE, KC_BSPC)
 #define RS_SPC   LT(_RAISE, KC_SPC)
+#define TT_SPC   LT(_TETIKUS, KC_SPC)
 
 #define RAISE    MO(_RAISE)
 #define LOWER    MO(_LOWER)
@@ -34,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_A,    KC_O,    KC_E,    KC_U, KC_I,                                     KC_D, KC_H, KC_T,    KC_N,   KC_S,
   KC_QUOT, KC_Q,    KC_J,    KC_K, KC_X,                                     KC_B, KC_M, KC_W,    KC_V,   KC_Z,
            KC_TAB,  KC_LGUI,                                                             KC_MINS, KC_SLSH,
-                                         RS_BSPC, SFT_ESC,  RAISE,   KC_SPC,
+                                         RS_BSPC, SFT_ESC,  RAISE,   TT_SPC,
                                          KC_LCTL, LW_DEL,   ALT_ENT, KC_LCTL,
                                          KC_LGUI, KC_ESC,   KC_LSFT, KC_LALT
 ),
@@ -74,6 +76,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                    RS_BSPC, SFT_ESC,  RS_SPC,  KC_SPC,
                                    KC_LCTL, LW_DEL,   ALT_ENT, KC_LCTL,
                                    KC_LALT, KC_ESC,   KC_LSFT, KC_LALT
+),
+[_TETIKUS] = LAYOUT(
+    ____, ____, KC_MS_WH_UP,   ____, ____,                 ____,   KC_MS_BTN1, KC_MS_UP,   KC_MS_BTN2,  ____,
+    ____, ____, KC_MS_WH_DOWN, ____, ____,                 ____,   KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, ____,
+    ____, ____, ____,          ____, ____,                 ____,   KC_MUTE,    KC_BRID, ____,   ____,
+          ____, ____,                                                               ____, ____,
+                                        ____, ____,  REBASE, ____,
+                                        ____, ____,  ____,   ____,
+                                        ____, ____,  ____,   ____
 ),
 };
 
