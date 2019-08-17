@@ -78,9 +78,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                    KC_LALT, KC_ESC,   KC_LSFT, KC_LALT
 ),
 [_TETIKUS] = LAYOUT(
-    ____, ____, KC_MS_WH_UP,   ____, ____,                 ____,   KC_MS_BTN1, KC_MS_UP,   KC_MS_BTN2,  ____,
-    ____, ____, KC_MS_WH_DOWN, ____, ____,                 ____,   KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, ____,
-    ____, ____, ____,          ____, ____,                 ____,   KC_MUTE,    KC_BRID, ____,   ____,
+    ____, KC_MS_BTN2, KC_MS_UP,   KC_MS_BTN1,  ____,         ____,   ____,   KC_MS_WH_UP,   ____, ____,
+    ____, KC_MS_LEFT, KC_MS_DOWN, KC_MS_RIGHT, ____,         ____,   ____,   KC_MS_WH_DOWN, ____, ____,
+    ____, ____,       ____,       ____,        ____,         ____,   KC_MUTE,KC_BRID,       ____, ____,
           ____, ____,                                                               ____, ____,
                                         ____, ____,  REBASE, ____,
                                         ____, ____,  ____,   ____,
