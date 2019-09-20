@@ -22,6 +22,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #include "../../config.h"
 
+#define TAPPING_TERM 500
+
 /* Use I2C or Serial, not both */
 
 #define USE_SERIAL
