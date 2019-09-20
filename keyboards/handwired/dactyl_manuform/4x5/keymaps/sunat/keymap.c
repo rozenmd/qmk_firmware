@@ -17,6 +17,7 @@ extern keymap_config_t keymap_config;
 
 #define ____     KC_TRNS
 
+<<<<<<< HEAD
 #define ALT_ENT  ALT_T(KC_ENT)
 #define CTL_BSPC CTL_T(KC_BSPC)
 #define CTL_TAB  CTL_T(KC_TAB)
@@ -48,8 +49,13 @@ extern keymap_config_t keymap_config;
 
 #define SFT_ESC  SFT_T(KC_ESC)
 #define CTL_BSPC CTL_T(KC_BSPC)
+=======
+>>>>>>> idk anymore what should be done.
 #define ALT_ENT  ALT_T(KC_ENT)
+#define CTL_BSPC CTL_T(KC_BSPC)
+#define CTL_TAB  CTL_T(KC_TAB)
 #define GUI_TAB  LGUI_T(KC_TAB)
+#define SFT_ESC  SFT_T(KC_ESC)
 
 #define LW_DEL   LT(_LOWER, KC_DELT)
 #define LW_BSPC  LT(_LOWER, KC_BSPC)
@@ -76,6 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_A,    KC_O,    KC_E,    KC_U, KC_I,                                     KC_D, KC_H, KC_T,    KC_N,   KC_S,
   KC_QUOT, KC_Q,    KC_J,    KC_K, KC_X,                                     KC_B, KC_M, KC_W,    KC_V,   KC_Z,
 <<<<<<< HEAD
+<<<<<<< HEAD
            KC_TAB,  KC_LGUI,                                                             KC_MINS, KC_SLSH,
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -94,8 +101,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 >>>>>>> added sunat
 =======
            KC_TAB,  KC_LCTL,                                                             KC_MINS, KC_SLSH,
+=======
+           KC_TAB,  KC_LGUI,                                                             KC_MINS, KC_SLSH,
+>>>>>>> idk anymore what should be done.
                                          RS_BSPC, SFT_ESC,  RAISE,   TT_SPC,
-                                         GUI_TAB, LW_DEL,   ALT_ENT, KC_LGUI,
+                                         CTL_TAB, LW_DEL,   ALT_ENT, KC_LCTL,
                                          ____,    ____,     ____,    ____
 >>>>>>> some things:
 ),
