@@ -20,6 +20,15 @@ extern keymap_config_t keymap_config;
 #define GUI_TAB  LGUI_T(KC_TAB)
 #define SFT_ESC  SFT_T(KC_ESC)
 
+#define CT_A CTL_T(KC_A)
+#define CT_S CTL_T(KC_S)
+#define SH_O SFT_T(KC_O)
+#define SH_N SFT_T(KC_N)
+#define AL_E ALT_T(KC_E)
+#define AL_T ALT_T(KC_T)
+#define GU_U LGUI_T(KC_U)
+#define GU_H LGUI_T(KC_H)
+
 #define LW_DEL   LT(_LOWER, KC_DELT)
 #define LW_BSPC  LT(_LOWER, KC_BSPC)
 #define RS_BSPC  LT(_RAISE, KC_BSPC)
