@@ -24,12 +24,17 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define FORCE_NKRO
 
 =======
 >>>>>>> added sunat
 =======
 >>>>>>> added sunat
+=======
+#define TAPPING_TERM 500
+
+>>>>>>> idk anymore what should be done.
 /* Use I2C or Serial, not both */
 
 #define USE_SERIAL
