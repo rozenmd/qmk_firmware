@@ -165,6 +165,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
           ____, ADJUST,                                                            KC_MINS, KC_QUOT,
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                    RS_BSPC, SFT_ESC,  RAISE,   TT_SPC,
                                    CTL_TAB, LW_DEL,   ALT_ENT, KC_LCTL,
                                    ____,    ____,     ____,    ____
@@ -187,6 +188,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                    KC_LCTL, LW_DEL,   ALT_ENT, KC_LCTL,
                                    KC_LALT, KC_ESC,   KC_LSFT, KC_LALT
 >>>>>>> added sunat
+=======
+                                   RS_BSPC, SFT_ESC,  RAISE,   TT_SPC,
+                                   CTL_TAB, LW_DEL,   ALT_ENT, KC_LCTL,
+                                   ____,    ____,     ____,    ____
+>>>>>>> nkro enabled.
 ),
 [_TETIKUS] = LAYOUT(
     ____, KC_MS_BTN2, KC_MS_UP,   KC_MS_BTN1,  ____,         ____,   ____,   KC_MS_WH_UP,   ____, ____,

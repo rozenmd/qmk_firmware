@@ -25,6 +25,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define FORCE_NKRO
 
 =======
@@ -33,6 +34,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 >>>>>>> added sunat
 =======
 #define TAPPING_TERM 500
+=======
+#define FORCE_NKRO
+>>>>>>> nkro enabled.
 
 >>>>>>> idk anymore what should be done.
 /* Use I2C or Serial, not both */
