@@ -24,6 +24,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 /* Use I2C or Serial, not both */
 
+#define FORCE_NKRO
+
 #define USE_SERIAL
 // #define USE_I2C
 
