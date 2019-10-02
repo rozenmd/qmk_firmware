@@ -27,7 +27,6 @@ enum custom_keycodes {
 #define RS_SPC  LT(_RAISE, KC_SPC)
 #define SH_ESC  SFT_T(KC_ESC)
 
-
 #define AL_E    ALT_T(KC_E)
 #define AL_T    ALT_T(KC_T)
 #define CT_N    CTL_T(KC_N)
@@ -42,6 +41,8 @@ enum custom_keycodes {
 #define LOCKGUI  LGUI(KC_L)
 #define TASKMGR  LCTL(LSFT(KC_ESC))
 
+#define ADJUST  MO(_ADJUST)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_QWERTY] = LAYOUT( \
@@ -55,46 +56,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_EXLM, KC_AT,   KC_UP,   KC_LCBR, KC_RCBR,                   KC_BSLS, KC_7,    KC_8,   KC_9,   KC_ASTR ,
     KC_HASH, KC_LEFT, KC_DOWN, KC_RGHT, KC_DLR,                    KC_EQL,  KC_4,    KC_5,   KC_6,   KC_ENT ,
     KC_LBRC, KC_RBRC, KC_LPRN, KC_RPRN, KC_AMPR,                   KC_GRV,  KC_1,    KC_2,   KC_3,   KC_PLUS ,
-                      _______, _______, _______,                   _______, KC_0,    KC_DOT                    \
+                      ADJUST,  _______, KC_0,                      _______, _______, KC_DOT                    \
 ),
 
-/* Lower
- *
- * ,----------------------------------.           ,----------------------------------.
- * |   !  |   @  |   #  |   $  |   %  |           |   ^  |   &  |   *  |   (  |   )  |
- * |------+------+------+------+------|           |------+------+------+------+------|
- * |  Esc |      |      |      |      |           |      |   _  |   +  |   {  |   }  |
- * |------+------+------+------+------|           |------+------+------+------+------|
- * |  Caps|   ~  |      |      |      |           |      |      |      |   |  |   "  |
- * `----------------------------------'           `----------------------------------'
- *                  ,--------------------.    ,------,-------------.
- *                  |      | LOWER|      |    |      | RAISE|  Del |
- *                  `-------------|      |    | Enter|------+------.
- *                                |      |    |      |
- *                                `------'    `------'
- */
 [_LOWER] = LAYOUT( \
-    KC_ESC,  KC_PSCR, KC_PAUS, KC_F1, KC_F2,                    KC_F3,  KC_F4,   KC_INS,  KC_DELT, KC_BSPC ,
+    KC_ESC,  KC_PSCR, KC_PAUS, KC_F1, KC_F2,                    KC_F3,  KC_F4,   KC_INS,  KC_MINS, KC_BSPC ,
     KC_CLCK, KC_TAB,  KC_PGUP, KC_F5, KC_F6,                    KC_F7,  KC_F8,   KC_HOME, KC_LALT, KC_ENT  ,
-    KC_LSFT, KC_SLCK, KC_PGDN, KC_F9, KC_F10,                   KC_F11, KC_F12,  KC_END,  KC_MINS, KC_SLSH ,
-                    _______, _______, _______,                  KC_ENT, _______, KC_DEL                    \
+    KC_LSFT, KC_LSFT, KC_PGDN, KC_F9, KC_F10,                   KC_F11, KC_F12,  KC_END,  KC_MINS, KC_SLSH ,
+                      _______, _______, _______,                KC_ENT, KC_DEL,  ADJUST                    \
 ),
 
-/* Adjust (Lower + Raise)
- *
- * ,----------------------------------.           ,----------------------------------.
- * |  F1  |  F2  |  F3  |  F4  |  F5  |           |   F6 |  F7  |  F8  |  F9  |  F10 |
- * |------+------+------+------+------|           |------+------+------+------+------|
- * |  F11 |  F12 |      |      |      |           |      |      |      |Taskmg|caltde|
- * |------+------+------+------+------|           |------+------+------+------+------|
- * | Reset|      |      |      |      |           |      |      |      |      |      |
- * `----------------------------------'           `----------------------------------'
- *                  ,--------------------.    ,------,-------------.
- *                  |      | LOWER|      |    |      | RAISE|      |
- *                  `-------------|      |    |      |------+------.
- *                                |      |    |      |
- *                                `------'    `------'
- */
 [_ADJUST] =  LAYOUT( \
   KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,        KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10, \
   KC_F11,  KC_F12,  _______, _______, _______,      _______, _______, _______, TSKMGR, CALTDEL, \
