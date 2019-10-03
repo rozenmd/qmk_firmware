@@ -26,9 +26,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define FORCE_NKRO
 #define ONESHOT_TIMEOUT 1000
+=======
+#undef TAPPING_TERM
+>>>>>>> keymap iteration.
 #define TAPPING_TERM 200
+#define IGNORE_MOD_TAP_INTERUPT
 
 =======
 >>>>>>> added sunat
