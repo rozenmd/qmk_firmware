@@ -9,6 +9,7 @@ extern keymap_config_t keymap_config;
 #define _QWERTY 0
 #define _LOWER 1
 #define _RAISE 2
+#define _MAUS  3
 #define _ADJUST 16
 
 enum custom_keycodes {
@@ -16,6 +17,7 @@ enum custom_keycodes {
   LOWER,
   RAISE,
   ADJUST,
+  MAUS,
 };
 
 #define AD_DEL  LT(_ADJUST, KC_DELT)
@@ -54,9 +56,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_RAISE] = LAYOUT( \
     KC_EXLM, KC_AT,   KC_UP,   KC_LCBR, KC_RCBR,                   KC_BSLS, KC_7,    KC_8,   KC_9,   KC_ASTR ,
-    KC_HASH, KC_LEFT, KC_DOWN, KC_RGHT, KC_DLR,                    KC_EQL,  KC_4,    KC_5,   KC_6,   KC_ENT ,
+    KC_HASH, KC_LEFT, KC_DOWN, KC_RGHT, KC_DLR,                    KC_EQL,  KC_4,    KC_5,   KC_6,   KC_0 ,
     KC_LBRC, KC_RBRC, KC_LPRN, KC_RPRN, KC_AMPR,                   KC_GRV,  KC_1,    KC_2,   KC_3,   KC_PLUS ,
-                      ADJUST,  _______, KC_0,                      _______, _______, KC_DOT                    \
+                      ADJUST,  _______, KC_ENT,                    _______, _______, KC_DOT                    \
 ),
 
 [_LOWER] = LAYOUT( \
@@ -67,8 +69,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_ADJUST] =  LAYOUT( \
-  _______, EXPLORER, KC_UP,   _______, _______,      _______, _______, _______, _______, LOCKGUI, \
+  _______, EXPLORER, KC_UP,   _______, _______,      _______, _______, MAUS,    _______, LOCKGUI, \
   TASKMGR, KC_LEFT,  KC_DOWN, KC_RGHT, _______,      _______, _______, KC_LGUI, _______, CALTDEL, \
+  _______, _______,  _______, _______, RESET,        _______, _______, _______, _______, _______, \
+                     _______, _______, _______,      _______,  _______, _______                    \
+),
+[_MAUS] =  LAYOUT( \
+  _______, KC_BTN2,  KC_MS_U, KC_BTN1, _______,      _______, _______, _______, _______, LOCKGUI, \
+  TASKMGR, KC_MS_L,  KC_MS_D, KC_MS_R, _______,      _______, _______, KC_LGUI, _______, CALTDEL, \
   _______, _______,  _______, _______, RESET,        _______, _______, _______, _______, _______, \
                      _______, _______, _______,      _______,  _______, _______                    \
 )
