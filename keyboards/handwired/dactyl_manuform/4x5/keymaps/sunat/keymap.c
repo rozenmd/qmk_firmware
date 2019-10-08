@@ -88,10 +88,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                              ____, ____,  ____, ____
 ),
 [_ADJUST] = LAYOUT(
-    ____,    EXPLORER, KC_UP,   ____,    PREVWIN,                         NEXTWIN, PREVTAB, NEXTTAB, ____, LOCKGUI,
+    ____,    EXPLORER, KC_UP,   PREVTAB, PREVWIN,                         NEXTWIN, NEXTTAB, ____,    ____, LOCKGUI,
     TASKMGR, KC_LEFT,  KC_DOWN, KC_RGHT, ____,                            ____,    REBASE,  KC_LGUI, ____, CALTDEL,
     ____,    ____,     ____,    ____,    RESET,                           QWERTY,  KC_MUTE, ____,    ____, ____,
-             ____,     ____,                                                               ____,    ____,
+             ____,     ____,                                                                ____,    ____,
                                                 ____, ____,  ____, ____,
                                                 ____, ____,  ____,   ____,
                                                 ____, ____,  ____,   ____
