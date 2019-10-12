@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 MOUSEKEY_ENABLE = yes
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -10,3 +11,6 @@ NKRO_ENABLE = yes
 =======
 NKRO_ENABLE = yes
 >>>>>>> nkro enabled.
+=======
+NKRO_ENABLE = yes
+>>>>>>> a67ea0b6b9a3864c3bf4f51b3cd897677ee1695a

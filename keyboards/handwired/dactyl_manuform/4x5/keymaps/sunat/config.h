@@ -27,6 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 #define FORCE_NKRO
 #define ONESHOT_TIMEOUT 1000
 =======
@@ -46,6 +47,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 >>>>>>> nkro enabled.
 
 >>>>>>> idk anymore what should be done.
+=======
+#undef TAPPING_TERM
+#define TAPPING_TERM 200
+#define IGNORE_MOD_TAP_INTERRUPT
+
+>>>>>>> a67ea0b6b9a3864c3bf4f51b3cd897677ee1695a
 /* Use I2C or Serial, not both */
 
 #define USE_SERIAL

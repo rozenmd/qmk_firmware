@@ -13,11 +13,17 @@ extern keymap_config_t keymap_config;
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a67ea0b6b9a3864c3bf4f51b3cd897677ee1695a
 #define _TETIKUS 5
 
 #define ____     KC_TRNS
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> a67ea0b6b9a3864c3bf4f51b3cd897677ee1695a
 #define ALT_ENT  ALT_T(KC_ENT)
 #define CTL_BSPC CTL_T(KC_BSPC)
 #define CTL_TAB  CTL_T(KC_TAB)
@@ -44,6 +50,7 @@ extern keymap_config_t keymap_config;
 #define LW_BSPC  LT(_LOWER, KC_BSPC)
 #define RS_BSPC  LT(_RAISE, KC_BSPC)
 #define RS_SPC   LT(_RAISE, KC_SPC)
+<<<<<<< HEAD
 <<<<<<< HEAD
 #define TT_SPC   LT(_TETIKUS, KC_SPC)
 =======
@@ -88,6 +95,8 @@ extern keymap_config_t keymap_config;
 >>>>>>> some things:
 =======
 >>>>>>> keymap iteration.
+=======
+>>>>>>> a67ea0b6b9a3864c3bf4f51b3cd897677ee1695a
 
 #define RAISE    MO(_RAISE)
 #define LOWER    MO(_LOWER)
@@ -111,6 +120,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_SCLN, KC_COMM, KC_DOT,  KC_P, KC_Y,                                     KC_F, KC_G, KC_C,    KC_R,   KC_L,
   SH_A,    CT_O,    AL_E,    GU_U, KC_I,                                     KC_D, GU_H, AL_T,    CT_N,   SH_S,
   KC_QUOT, KC_Q,    KC_J,    KC_K, KC_X,                                     KC_B, KC_M, KC_W,    KC_V,   KC_Z,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
            KC_TAB,  KC_LGUI,                                                             KC_MINS, KC_SLSH,
@@ -143,6 +153,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                          CTL_TAB, LW_DEL,   ALT_ENT, KC_LCTL,
                                          ____,    ____,     ____,    ____
 >>>>>>> some things:
+=======
+           KC_TAB,  KC_LGUI,                                                             KC_MINS, KC_SLSH,
+                                         LW_BSPC, SFT_ESC,  ALT_ENT, RS_SPC,
+                                         CTL_TAB, LW_DEL,   ALT_ENT, CTL_SLSH,
+                                         ____,    ____,     ____,    ____
+>>>>>>> a67ea0b6b9a3864c3bf4f51b3cd897677ee1695a
 ),
 
 [_RAISE] = LAYOUT(
@@ -152,6 +168,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              KC_INS,  ADJUST,                                                         KC_0, KC_DOT,
                                                ADDDD,   ____,    ____, ____,
                                                ____,    ____,    ____, ____,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -165,6 +182,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 =======
                                                ____,    ____,    ____, ____
 >>>>>>> some things:
+=======
+                                               ____,    ____,    ____, ____
+>>>>>>> a67ea0b6b9a3864c3bf4f51b3cd897677ee1695a
 ),
 [_LOWER] = LAYOUT(
     KC_ESC,  KC_PSCR, KC_PAUS, KC_F1, KC_F2,                           KC_F3,  KC_F4,  KC_MINS, KC_SLSH, KC_BSPC ,
@@ -189,6 +209,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_A, KC_S, KC_D, KC_F, KC_G,                                      KC_H, KC_J, KC_K,    KC_L,   KC_SCLN ,
     KC_Z, KC_X, KC_C, KC_V, KC_B,                                      KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH ,
           ____, ADJUST,                                                            KC_MINS, KC_QUOT,
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -234,6 +255,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                  CTL_TAB, LW_DEL,   ALT_ENT, CTL_SLSH,
                                  ____,    ____,     ____,    ____
 >>>>>>> keymap iteration.
+=======
+                                 LW_BSPC, SFT_ESC,  ALT_ENT, RS_SPC,
+                                 CTL_TAB, LW_DEL,   ALT_ENT, CTL_SLSH,
+                                 ____,    ____,     ____,    ____
+>>>>>>> a67ea0b6b9a3864c3bf4f51b3cd897677ee1695a
 ),
 };
 
