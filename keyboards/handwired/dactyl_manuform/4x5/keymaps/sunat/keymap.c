@@ -12,18 +12,16 @@ extern keymap_config_t keymap_config;
 #define ____ KC_TRNS
 
 #define ALT_ENT   ALT_T(KC_ENT)
-#define CTL_TAB   CTL_T(KC_TAB)
-#define CTL_SLSH  CTL_T(KC_SLSH)
 #define SFT_ESC   SFT_T(KC_ESC)
 
-#define CT_O CTL_T(KC_O)
-#define CT_N CTL_T(KC_N)
-#define SH_A SFT_T(KC_A)
-#define SH_S SFT_T(KC_S)
-#define AL_E ALT_T(KC_E)
-#define AL_T ALT_T(KC_T)
-#define GU_U LGUI_T(KC_U)
-#define GU_H LGUI_T(KC_H)
+#define CT_O RCTL_T(KC_O)
+#define CT_N RCTL_T(KC_N)
+#define SH_A RSFT_T(KC_A)
+#define SH_S RSFT_T(KC_S)
+#define AL_E RALT_T(KC_E)
+#define AL_T RALT_T(KC_T)
+#define GU_U RGUI_T(KC_U)
+#define GU_H RGUI_T(KC_H)
 
 #define LW_DEL   LT(_LOWER, KC_DELT)
 #define LW_BSPC  LT(_LOWER, KC_BSPC)
@@ -50,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_QUOT, KC_Q,    KC_J,    KC_K, KC_X,                                     KC_B, KC_M, KC_W,    KC_V,   KC_Z,
            KC_TAB,  KC_LGUI,                                                             KC_MINS, KC_SLSH,
                                          LW_BSPC, SFT_ESC,  ALT_ENT, RS_SPC,
-                                         CTL_TAB, LW_DEL,   ALT_ENT, CTL_SLSH,
+                                         KC_LCTL, LW_DEL,   ALT_ENT, KC_LCTL,
                                          ____,    ____,     ____,    ____
 ),
 
