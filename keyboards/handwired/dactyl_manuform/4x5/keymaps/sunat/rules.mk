@@ -1,1 +1,1 @@
-NKRO_ENABLE = false
+LEADER_ENABLE = yes
