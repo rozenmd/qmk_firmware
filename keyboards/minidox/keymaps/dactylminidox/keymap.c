@@ -17,7 +17,6 @@ enum custom_keycodes {
   LOWER,
   RAISE,
   ADJUST,
-  MAUS,
 };
 
 #define AD_DEL  LT(_ADJUST, KC_DELT)
@@ -39,8 +38,13 @@ enum custom_keycodes {
 #define SH_S    SFT_T(KC_S)
 
 #define CALTDEL  LCTL(LALT(KC_DEL))
+#define CLOSEGUI LALT(KC_F4)
 #define EXPLORER LGUI(KC_E)
 #define LOCKGUI  LGUI(KC_L)
+#define NEXTTAB  LCTL(KC_PGDN)
+#define NEXTWIN  LALT(KC_TAB)
+#define PREVTAB  LCTL(KC_PGUP)
+#define PREVWIN  LALT(LSFT(KC_TAB))
 #define TASKMGR  LCTL(LSFT(KC_ESC))
 
 #define ADJUST  MO(_ADJUST)
@@ -55,31 +59,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_RAISE] = LAYOUT( \
-    KC_EXLM, KC_AT,   KC_UP,   KC_LCBR, KC_RCBR,                   KC_BSLS, KC_7,    KC_8,   KC_9,   KC_ASTR ,
-    KC_HASH, KC_LEFT, KC_DOWN, KC_RGHT, KC_DLR,                    KC_EQL,  KC_4,    KC_5,   KC_6,   KC_0 ,
-    KC_LBRC, KC_RBRC, KC_LPRN, KC_RPRN, KC_AMPR,                   KC_GRV,  KC_1,    KC_2,   KC_3,   KC_PLUS ,
-                      ADJUST,  _______, KC_ENT,                    _______, _______, KC_DOT                    \
+    KC_EXLM, KC_AT,   KC_UP,   KC_LCBR, KC_RCBR,    KC_BSLS, KC_7,    KC_8,   KC_9,   KC_ASTR ,
+    KC_HASH, KC_LEFT, KC_DOWN, KC_RGHT, KC_DLR,     KC_EQL,  KC_4,    KC_5,   KC_6,   KC_0 ,
+    KC_LBRC, KC_RBRC, KC_LPRN, KC_RPRN, KC_AMPR,    KC_GRV,  KC_1,    KC_2,   KC_3,   KC_PLUS ,
+                      ADJUST,  _______, KC_ENT,     _______, _______, KC_DOT                    \
 ),
 
 [_LOWER] = LAYOUT( \
-    KC_ESC,  KC_PSCR, KC_PAUS, KC_F1, KC_F2,                    KC_F3,  KC_F4,   KC_MINS, KC_SLSH, KC_BSPC ,
-    KC_LSFT, KC_TAB,  KC_PGUP, KC_F5, KC_F6,                    KC_F7,  KC_F8,   KC_HOME, KC_LALT, KC_ENT  ,
-    KC_CLCK, KC_LSFT, KC_PGDN, KC_F9, KC_F10,                   KC_F11, KC_F12,  KC_END,  KC_INS, KC_SLSH ,
-                      _______, _______, _______,                KC_ENT, KC_DEL,  ADJUST                    \
+    KC_ESC,  KC_PSCR, KC_PAUS, KC_F1, KC_F2,        KC_F3,  KC_F4,   KC_MINS, KC_SLSH, KC_BSPC ,
+    KC_LSFT, KC_TAB,  KC_PGUP, KC_F5, KC_F6,        KC_F7,  KC_F8,   KC_HOME, KC_LALT, KC_ENT  ,
+    KC_CLCK, KC_LSFT, KC_PGDN, KC_F9, KC_F10,       KC_F11, KC_F12,  KC_END,  KC_INS, KC_SLSH ,
+                      _______, _______, _______,    KC_ENT, KC_DEL,  ADJUST                    \
 ),
 
 [_ADJUST] =  LAYOUT( \
-  _______, EXPLORER, KC_UP,   _______, _______,      _______, _______, MAUS,    _______, LOCKGUI, \
+  _______, EXPLORER, KC_UP,   PREVTAB, PREVWIN,      NEXTWIN, NEXTTAB, _______, _______, LOCKGUI, \
   TASKMGR, KC_LEFT,  KC_DOWN, KC_RGHT, _______,      _______, _______, KC_LGUI, _______, CALTDEL, \
-  _______, _______,  _______, _______, RESET,        _______, _______, _______, _______, _______, \
+  _______, CLOSEGUI, _______, _______, RESET,        _______, _______, _______, _______, _______, \
                      _______, _______, _______,      _______,  _______, _______                    \
 ),
-[_MAUS] =  LAYOUT( \
-  _______, KC_BTN2,  KC_MS_U, KC_BTN1, _______,      _______, _______, _______, _______, LOCKGUI, \
-  TASKMGR, KC_MS_L,  KC_MS_D, KC_MS_R, _______,      _______, _______, KC_LGUI, _______, CALTDEL, \
-  _______, _______,  _______, _______, RESET,        _______, _______, _______, _______, _______, \
-                     _______, _______, _______,      _______,  _______, _______                    \
-)
 };
 
 void persistant_default_layer_set(uint16_t default_layer) {
