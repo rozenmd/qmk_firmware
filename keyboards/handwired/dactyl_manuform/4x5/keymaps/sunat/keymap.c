@@ -122,6 +122,9 @@ void matrix_scan_user() {
     SEQ_ONE_KEY(KC_K) {
       SEND_STRING(":kek:");
     }
+    SEQ_ONE_KEY(KC_G) {
+      SEND_STRING(":germ:");
+    }
     SEQ_TWO_KEYS(KC_A, KC_I) {
       SEND_STRING(":ai03:");
     }
