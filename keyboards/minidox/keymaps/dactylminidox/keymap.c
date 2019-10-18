@@ -19,6 +19,9 @@ enum custom_keycodes {
   ADJUST,
 };
 
+#define KC_UNDR LSFT(KC_MINS)
+#define KC_QUES LSFT(KC_SLSH)
+
 #define AD_DEL  LT(_ADJUST, KC_DELT)
 #define AD_SPC  LT(_ADJUST, KC_SPC)
 #define AL_ENT  ALT_T(KC_ENT)
@@ -66,7 +69,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_LOWER] = LAYOUT( \
-    KC_ESC,  KC_PSCR, KC_PAUS, KC_F1, KC_F2,        KC_F3,  KC_F4,   KC_MINS, KC_SLSH, KC_BSPC ,
+    KC_ESC,  KC_UNDR, KC_QUES, KC_F1, KC_F2,        KC_F3,  KC_F4,   KC_MINS, KC_SLSH, KC_BSPC ,
     KC_LSFT, KC_TAB,  KC_PGUP, KC_F5, KC_F6,        KC_F7,  KC_F8,   KC_HOME, KC_LALT, KC_ENT  ,
     KC_CLCK, KC_LSFT, KC_PGDN, KC_F9, KC_F10,       KC_F11, KC_F12,  KC_END,  KC_INS, KC_SLSH ,
                       _______, _______, _______,    KC_ENT, KC_DEL,  ADJUST                    \
@@ -74,7 +77,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_ADJUST] =  LAYOUT( \
   _______, EXPLORER, KC_UP,   PREVTAB, PREVWIN,      NEXTWIN, NEXTTAB, _______, _______, LOCKGUI, \
-  TASKMGR, KC_LEFT,  KC_DOWN, KC_RGHT, _______,      _______, _______, KC_LGUI, _______, CALTDEL, \
+  TASKMGR, KC_LEFT,  KC_DOWN, KC_RGHT, _______,      _______, KC_LEAD, KC_LGUI, _______, CALTDEL, \
   _______, CLOSEGUI, _______, _______, RESET,        _______, _______, _______, _______, _______, \
                      _______, _______, _______,      _______,  _______, _______                    \
 ),
@@ -123,4 +126,57 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       break;
   }
   return true;
+}
+
+
+LEADER_EXTERNS();
+
+void matrix_scan_user() {
+  LEADER_DICTIONARY() {
+    leading = false;
+    leader_end();
+    // emojis for input tech's discord server.
+    SEQ_ONE_KEY(KC_A) {
+      SEND_STRING(":ayyy:");
+    }
+    SEQ_ONE_KEY(KC_O) {
+      SEND_STRING(":owo:");
+    }
+    SEQ_ONE_KEY(KC_U) {
+      SEND_STRING(":uwu:");
+    }
+    SEQ_ONE_KEY(KC_W) {
+      SEND_STRING(":we_already_had_sex_this_week:");
+    }
+    SEQ_ONE_KEY(KC_M) {
+      SEND_STRING(":megu:");
+    }
+    SEQ_ONE_KEY(KC_Y) {
+      SEND_STRING(":yeetcry:");
+    }
+    SEQ_ONE_KEY(KC_D) {
+      SEND_STRING(":dogg:");
+    }
+    SEQ_ONE_KEY(KC_C) {
+      SEND_STRING(":crocodile:");
+    }
+    SEQ_ONE_KEY(KC_K) {
+      SEND_STRING(":kek:");
+    }
+    SEQ_ONE_KEY(KC_G) {
+      SEND_STRING(":germ:");
+    }
+    SEQ_TWO_KEYS(KC_A, KC_I) {
+      SEND_STRING(":ai03:");
+    }
+    SEQ_TWO_KEYS(KC_A, KC_X) {
+      SEND_STRING(":axolotl:");
+    }
+    SEQ_TWO_KEYS(KC_C, KC_R) {
+      SEND_STRING(":crocodilereverse:");
+    }
+    SEQ_TWO_KEYS(KC_L, KC_F) {
+      SEND_STRING(":lightfire:");
+    }
+  }
 }

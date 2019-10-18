@@ -1,12 +1,13 @@
 // dustypomerleau, Minidox config
-
 #pragma once
 
 #define EE_HANDS
-#define IGNORE_MOD_TAP_INTERRUPT
-#define ONESHOT_TIMEOUT 1000
-#define TAPPING_TERM 200
 #define USE_SERIAL
+
+#define IGNORE_MOD_TAP_INTERRUPT
+#define TAPPING_TERM 150
+#define LEADER_PER_KEY_TIMING
+#define LEADER_TIMEOUT 400
 
 #undef MATRIX_ROW_PINS
 #undef MATRIX_COL_PINS
