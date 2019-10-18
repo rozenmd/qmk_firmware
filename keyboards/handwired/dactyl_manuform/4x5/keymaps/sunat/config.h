@@ -23,7 +23,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "../../config.h"
 
 #undef TAPPING_TERM
-#define TAPPING_TERM 150
+#define TAPPING_TERM 200
 #define IGNORE_MOD_TAP_INTERRUPT
 
 /* Use I2C or Serial, not both */
@@ -38,4 +38,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define EE_HANDS
 
 #define LEADER_PER_KEY_TIMING
-#define LEADER_TIMEOUT 400
+#define LEADER_TIMEOUT 500
