@@ -11,6 +11,9 @@ extern keymap_config_t keymap_config;
 
 #define ____ KC_TRNS
 
+#define KC_QUES LSFT(KC_SLSH)
+#define KC_UNDR LSFT(KC_MINS)
+
 #define ALT_ENT   ALT_T(KC_ENT)
 #define SFT_ESC   SFT_T(KC_ESC)
 
