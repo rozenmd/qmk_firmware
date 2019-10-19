@@ -44,6 +44,8 @@ enum custom_keycodes {
 #define CLOSEGUI LALT(KC_F4)
 #define EXPLORER LGUI(KC_E)
 #define LOCKGUI  LGUI(KC_L)
+#define UPTAB    LCTL(LSFT(KC_PGUP))
+#define DNTAB    LCTL(LSFT(KC_PGDN))
 #define NEXTTAB  LCTL(KC_PGDN)
 #define NEXTWIN  LALT(KC_TAB)
 #define PREVTAB  LCTL(KC_PGUP)
