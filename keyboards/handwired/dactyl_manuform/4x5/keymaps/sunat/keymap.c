@@ -37,6 +37,8 @@ extern keymap_config_t keymap_config;
 
 #define NEXTTAB  LCTL(KC_PGDN)
 #define PREVTAB  LCTL(KC_PGUP)
+#define UPTAB    LCTL(LSFT(KC_PGUP))
+#define DNTAB    LCTL(LSFT(KC_PGDN))
 #define NEXTWIN  LALT(KC_TAB)
 #define PREVWIN  LALT(LSFT(KC_TAB))
 #define CALTDEL  LCTL(LALT(KC_DELT))
@@ -77,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 [_ADJUST] = LAYOUT(
     ____,    EXPLORER, KC_UP,   PREVTAB, PREVWIN,                         NEXTWIN, NEXTTAB, ____,    ____, LOCKGUI,
-    TASKMGR, KC_LEFT,  KC_DOWN, KC_RGHT, ____,                            ____,    ____,    KC_LGUI, ____, CALTDEL,
+    TASKMGR, KC_LEFT,  KC_DOWN, KC_RGHT, UPTAB,                           DNTAB,   ____,    KC_LGUI, ____, CALTDEL,
     ____,    CLOSEGUI, ____,    ____,    RESET,                           ____,    ____,    ____,    ____, ____,
              ____,     ____,                                                                ____,    ____,
                                                 ____, ____,  ____, ____,
