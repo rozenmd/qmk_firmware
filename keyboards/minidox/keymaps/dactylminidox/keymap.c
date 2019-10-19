@@ -79,7 +79,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_ADJUST] =  LAYOUT( \
   _______, EXPLORER, KC_UP,   PREVTAB, PREVWIN,      NEXTWIN, NEXTTAB, _______, _______, LOCKGUI, \
-  TASKMGR, KC_LEFT,  KC_DOWN, KC_RGHT, _______,      _______, KC_LEAD, KC_LGUI, _______, CALTDEL, \
+  TASKMGR, KC_LEFT,  KC_DOWN, KC_RGHT, UPTAB,        DNTAB,   KC_LEAD, KC_LGUI, _______, CALTDEL, \
   _______, CLOSEGUI, _______, _______, RESET,        _______, _______, _______, _______, _______, \
                      _______, _______, _______,      _______,  _______, _______                    \
 ),
