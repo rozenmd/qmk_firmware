@@ -180,5 +180,8 @@ void matrix_scan_user() {
     SEQ_TWO_KEYS(KC_L, KC_F) {
       SEND_STRING(":lightfire:");
     }
+    SEQ_TWO_KEYS(KC_P, KC_L) {
+      SEND_STRING("please consider to crosspost it to r/ergomechkeyboards. thanks.");
+    }
   }
 }
