@@ -45,6 +45,7 @@ extern keymap_config_t keymap_config;
 #define TASKMGR  LCTL(LSFT(KC_ESC))
 #define EXPLORER LGUI(KC_E)
 #define LOCKGUI  LGUI(KC_L)
+#define CONPASTE LSFT(KC_INS)
 
 #define CLOSEGUI LALT(KC_F4)
 
@@ -78,13 +79,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                              ____, ____,  ____, ____
 ),
 [_ADJUST] = LAYOUT(
-    ____,    EXPLORER, KC_UP,   PREVTAB, PREVWIN,                         NEXTWIN, NEXTTAB, ____,    ____, LOCKGUI,
-    TASKMGR, KC_LEFT,  KC_DOWN, KC_RGHT, UPTAB,                           DNTAB,   ____,    KC_LGUI, ____, CALTDEL,
-    ____,    CLOSEGUI, ____,    ____,    RESET,                           ____,    ____,    ____,    ____, ____,
-             ____,     ____,                                                                ____,    ____,
-                                                ____, ____,  ____, ____,
-                                                ____, ____,  ____, ____,
-                                                ____, ____,  ____, ____
+    ____,    EXPLORER, KC_UP,   PREVTAB,  PREVWIN,                         NEXTWIN, NEXTTAB, ____,    ____, LOCKGUI,
+    TASKMGR, KC_LEFT,  KC_DOWN, KC_RGHT,  UPTAB,                           DNTAB,   ____,    KC_LGUI, ____, CALTDEL,
+    ____,    CLOSEGUI, ____,    CONPASTE, RESET,                           ____,    ____,    ____,    ____, ____,
+             ____,     ____,                                                                 ____,    ____,
+                                                  ____, ____,  ____, ____,
+                                                  ____, ____,  ____, ____,
+                                                  ____, ____,  ____, ____
 ),
 };
 
