@@ -28,8 +28,10 @@ extern keymap_config_t keymap_config;
 
 #define LW_DEL   LT(_LOWER, KC_DELT)
 #define LW_BSPC  LT(_LOWER, KC_BSPC)
-#define RS_BSPC  LT(_RAISE, KC_BSPC)
 #define RS_SPC   LT(_RAISE, KC_SPC)
+
+#define RS_D     LT(_RAISE, KC_D)
+#define LW_I     LT(_LOWER, KC_I)
 
 #define RAISE    MO(_RAISE)
 #define LOWER    MO(_LOWER)
@@ -52,7 +54,7 @@ extern keymap_config_t keymap_config;
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BASE] = LAYOUT(
   KC_SCLN, KC_COMM, KC_DOT,  KC_P, KC_Y,                                     KC_F, KC_G, KC_C,    KC_R,   KC_L,
-  SH_A,    CT_O,    AL_E,    GU_U, KC_I,                                     KC_D, GU_H, AL_T,    CT_N,   SH_S,
+  SH_A,    CT_O,    AL_E,    GU_U, LW_I,                                     RS_D, GU_H, AL_T,    CT_N,   SH_S,
   KC_QUOT, KC_Q,    KC_J,    KC_K, KC_X,                                     KC_B, KC_M, KC_W,    KC_V,   KC_Z,
            KC_TAB,  KC_LGUI,                                                             KC_MINS, KC_SLSH,
                                          LW_BSPC, SFT_ESC,  ALT_ENT, RS_SPC,
