@@ -58,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_QUOT, KC_Q,    KC_J,    KC_K, KC_X,                                     KC_B, KC_M, KC_W,    KC_V,   KC_Z,
            KC_TAB,  KC_LGUI,                                                             KC_MINS, KC_SLSH,
                                          LW_BSPC, SFT_ESC,  ALT_ENT, RS_SPC,
-                                         KC_LCTL, LW_DEL,   KC_LEAD, KC_LCTL,
+                                         KC_LCTL, LW_DEL,   KC_QUES, KC_LCTL,
                                          ____,    ____,     ____,    ____
 ),
 
@@ -94,56 +94,4 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 void persistent_default_layer_set(uint16_t default_layer) {
   eeconfig_update_default_layer(default_layer);
   default_layer_set(default_layer);
-}
-
-LEADER_EXTERNS();
-
-void matrix_scan_user() {
-  LEADER_DICTIONARY() {
-    leading = false;
-    leader_end();
-    // emojis for input tech's discord server.
-    SEQ_ONE_KEY(KC_A) {
-      SEND_STRING(":ayyy:");
-    }
-    SEQ_ONE_KEY(KC_O) {
-      SEND_STRING(":owo:");
-    }
-    SEQ_ONE_KEY(KC_U) {
-      SEND_STRING(":uwu:");
-    }
-    SEQ_ONE_KEY(KC_W) {
-      SEND_STRING(":we_already_had_sex_this_week:");
-    }
-    SEQ_ONE_KEY(KC_M) {
-      SEND_STRING(":megu:");
-    }
-    SEQ_ONE_KEY(KC_Y) {
-      SEND_STRING(":yeetcry:");
-    }
-    SEQ_ONE_KEY(KC_D) {
-      SEND_STRING(":dogg:");
-    }
-    SEQ_ONE_KEY(KC_C) {
-      SEND_STRING(":crocodile:");
-    }
-    SEQ_ONE_KEY(KC_K) {
-      SEND_STRING(":kek:");
-    }
-    SEQ_ONE_KEY(KC_G) {
-      SEND_STRING(":germ:");
-    }
-    SEQ_TWO_KEYS(KC_A, KC_I) {
-      SEND_STRING(":ai03:");
-    }
-    SEQ_TWO_KEYS(KC_A, KC_X) {
-      SEND_STRING(":axolotl:");
-    }
-    SEQ_TWO_KEYS(KC_C, KC_R) {
-      SEND_STRING(":crocodilereverse:");
-    }
-    SEQ_TWO_KEYS(KC_L, KC_F) {
-      SEND_STRING(":lightfire:");
-    }
-  }
 }
