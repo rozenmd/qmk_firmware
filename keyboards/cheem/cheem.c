@@ -17,7 +17,7 @@
 #include QMK_KEYBOARD_H
 
 bool i2c_initialized = 0;
-//i2c_status_t mcp23018_status = 0x20;
+i2c_status_t mcp23018_status = 0x20;
 
 void matrix_init_kb(void) {
   //// (tied to Vcc for hardware convenience)

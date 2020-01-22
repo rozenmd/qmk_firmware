@@ -37,7 +37,7 @@
 #define OLATA           0x14            // output latch register
 #define OLATB           0x15
 
-extern uint8_t mcp23018_status;
+extern i2c_status_t mcp23018_status;
 
 #define I2C_TIMEOUT 1000
 
