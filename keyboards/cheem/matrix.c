@@ -1,6 +1,4 @@
 /*
-
-
 Copyright 2013 Oleg Kostyuk <cub.uanic@gmail.com>
 
 This program is free software: you can redistribute it and/or modify
@@ -32,19 +30,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "debounce.h"
 #include QMK_KEYBOARD_H
 
-/*
- * This constant define not debouncing time in msecs, assuming eager_pr.
- *
- * On Ergodox matrix scan rate is relatively low, because of slow I2C.
- * Now it's only 317 scans/second, or about 3.15 msec/scan.
- * According to Cherry specs, debouncing time is 5 msec.
- *
- * However, some switches seem to have higher debouncing requirements, or
- * something else might be wrong. (Also, the scan speed has improved since
- * that comment was written.)
- */
-
-/* matrix state(1:on, 0:off) */
 static matrix_row_t raw_matrix[MATRIX_ROWS];  // raw values
 static matrix_row_t matrix[MATRIX_ROWS];      // debounced values
 
@@ -54,7 +39,6 @@ static void         unselect_rows(void);
 static void         select_row(uint8_t row);
 
 static uint8_t mcp23018_reset_loop;
-// static uint16_t mcp23018_reset_loop;
 
 __attribute__((weak)) void matrix_init_user(void) {}
 
@@ -184,33 +168,31 @@ uint8_t matrix_key_count(void) {
  * pin: B2  B3  D4  D6  D7
  *
  * MCP23018
- * col: 0   1   2   3   4   5
- * pin: B5  B4  B3  B2  B1  B0
+ * col: 0   1   2   3   4
+ * pin: B0  B1  B5  B6  B7
  */
 static void init_cols(void) {
   // init on mcp23018
   // not needed, already done as part of init_mcp23018()
 
-  // init on teensy
+  // init on atmega
   // Input with pull-up(DDR:0, PORT:1)
-  DDRF &= ~(1 << 7 | 1 << 6 | 1 << 5 | 1 << 4 | 1 << 1 | 1 << 0);
-  PORTF |= (1 << 7 | 1 << 6 | 1 << 5 | 1 << 4 | 1 << 1 | 1 << 0);
+  DDRB &= ~(1 << 2 | 1 << 3);
+  PORTB |= (1 << 2 | 1 << 3);
+  DDRD &= ~(1 << 4 | 1 << 6 | 1 << 7);
+  PORTD |= (1 << 4 | 1 << 6 | 1 << 7);
 }
 
 static matrix_row_t read_cols(uint8_t row) {
-  if (row < 7) {
+  if (row < 4) {
     if (mcp23018_status) {  // if there was an error
       return 0;
     } else {
       uint8_t data    = 0;
-      mcp23018_status = i2c_start(I2C_ADDR_WRITE, I2C_TIMEOUT);
-      if (mcp23018_status) goto out;
-      mcp23018_status = i2c_write(GPIOB, I2C_TIMEOUT);
-      if (mcp23018_status) goto out;
-      mcp23018_status = i2c_start(I2C_ADDR_READ, I2C_TIMEOUT);
-      if (mcp23018_status) goto out;
-      mcp23018_status = i2c_read_nack(I2C_TIMEOUT);
-      if (mcp23018_status < 0) goto out;
+      mcp23018_status = i2c_start(I2C_ADDR_WRITE, I2C_TIMEOUT); if (mcp23018_status)     goto out;
+      mcp23018_status = i2c_write(GPIOB, I2C_TIMEOUT);          if (mcp23018_status)     goto out;
+      mcp23018_status = i2c_start(I2C_ADDR_READ, I2C_TIMEOUT);  if (mcp23018_status)     goto out;
+      mcp23018_status = i2c_read_nack(I2C_TIMEOUT);             if (mcp23018_status < 0) goto out;
       data            = ~((uint8_t)mcp23018_status);
       mcp23018_status = I2C_STATUS_SUCCESS;
     out:
@@ -230,13 +212,13 @@ static matrix_row_t read_cols(uint8_t row) {
 
 /* Row pin configuration
  *
- * Teensy
- * row: 7   8   9   10  11  12  13
- * pin: B0  B1  B2  B3  D2  D3  C6
+ * atmega
+ * row: 4   5   6   7
+ * pin: B5  B6  C6  F6
  *
  * MCP23018
- * row: 0   1   2   3   4   5   6
- * pin: A0  A1  A2  A3  A4  A5  A6
+ * row: 0   1   2   3
+ * pin: A0  A1  A2  A3
  */
 static void unselect_rows(void) {
   // no need to unselect on mcp23018, because the select step sets all
@@ -245,16 +227,16 @@ static void unselect_rows(void) {
 
   // unselect on teensy
   // Hi-Z(DDR:0, PORT:0) to unselect
-  DDRB &= ~(1 << 0 | 1 << 1 | 1 << 2 | 1 << 3);
-  PORTB &= ~(1 << 0 | 1 << 1 | 1 << 2 | 1 << 3);
-  DDRD &= ~(1 << 2 | 1 << 3);
-  PORTD &= ~(1 << 2 | 1 << 3);
+  DDRB &= ~(1 << 5 | 1 << 6);
+  PORTB &= ~(1 << 5 | 1 << 6);
   DDRC &= ~(1 << 6);
   PORTC &= ~(1 << 6);
+  DDRF &= ~(1 << 6);
+  PORTF &= ~(1 << 6);
 }
 
 static void select_row(uint8_t row) {
-  if (row < 7) {
+  if (row < 4) {
     // select on mcp23018
     if (mcp23018_status) {  // if there was an error
                             // do nothing
@@ -274,33 +256,21 @@ static void select_row(uint8_t row) {
     // select on teensy
     // Output low(DDR:1, PORT:0) to select
     switch (row) {
-      case 7:
-        DDRB |= (1 << 0);
-        PORTB &= ~(1 << 0);
+      case 4:
+        DDRB |= (1 << 5);
+        PORTB &= ~(1 << 5);
         break;
-      case 8:
-        DDRB |= (1 << 1);
-        PORTB &= ~(1 << 1);
+      case 5:
+        DDRB |= (1 << 6);
+        PORTB &= ~(1 << 6);
         break;
-      case 9:
-        DDRB |= (1 << 2);
-        PORTB &= ~(1 << 2);
-        break;
-      case 10:
-        DDRB |= (1 << 3);
-        PORTB &= ~(1 << 3);
-        break;
-      case 11:
-        DDRD |= (1 << 2);
-        PORTD &= ~(1 << 2);
-        break;
-      case 12:
-        DDRD |= (1 << 3);
-        PORTD &= ~(1 << 3);
-        break;
-      case 13:
+      case 6:
         DDRC |= (1 << 6);
         PORTC &= ~(1 << 6);
+        break;
+      case 7:
+        DDRF |= (1 << 6);
+        PORTF &= ~(1 << 6);
         break;
     }
   }
