@@ -4,7 +4,7 @@
 
 A short description of the keyboard/project
 
-* Keyboard Maintainer: [Ibnu D. Aji](https://github.com/yourusername)
+* Keyboard Maintainer: [ibnuda](https://github.com/ibnuda)
 * Hardware Supported: The PCBs, controllers supported
 * Hardware Availability: Links to where you can find this hardware
 
