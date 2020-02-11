@@ -32,11 +32,7 @@ enum combos {
     W_M,
 
     // both hands combinations.
-    DOT_C,
     J_W,
-    P_G,
-    U_H,
-    K_M,
 };
 
 enum {
@@ -101,11 +97,7 @@ const uint16_t PROGMEM v_w_combo[]         = {KC_V, KC_W, COMBO_END};
 const uint16_t PROGMEM w_m_combo[]         = {KC_W, KC_M, COMBO_END};
 
 // both hand combinations.
-const uint16_t PROGMEM dot_c_combo[]       = {KC_DOT, KC_C, COMBO_END};
 const uint16_t PROGMEM j_w_combo[]         = {KC_J, KC_W, COMBO_END};
-const uint16_t PROGMEM u_h_combo[]         = {KC_U, KC_H, COMBO_END};
-const uint16_t PROGMEM p_g_combo[]         = {KC_P, KC_G, COMBO_END};
-const uint16_t PROGMEM k_m_combo[]         = {KC_K, KC_M, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
     // left hand combinations.
@@ -123,11 +115,7 @@ combo_t key_combos[COMBO_COUNT] = {
     [W_M]           = COMBO(w_m_combo,          KC_DELT),
 
     // both hand combinations.
-    [DOT_C]         = COMBO(dot_c_combo,        KC_PGUP),
-    [J_W]           = COMBO(j_w_combo,          KC_PGDN),
-    [U_H]           = COMBO(u_h_combo,          KC_ENT),
-    [P_G]           = COMBO(p_g_combo,          KC_HOME),
-    [K_M]           = COMBO(k_m_combo,          KC_END),
+    [J_W]           = COMBO(j_w_combo,          KC_ENT),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
