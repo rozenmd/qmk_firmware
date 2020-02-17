@@ -17,3 +17,11 @@
 #pragma once
 
 // place overrides here
+
+#include "../../config.h"
+
+#undef TAPPING_TERM
+#define TAPPING_TERM 200
+#define IGNORE_MOD_TAP_INTERRUPT
+
+#define COMBO_COUNT 15

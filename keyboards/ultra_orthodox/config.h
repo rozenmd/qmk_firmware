@@ -20,19 +20,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "config_common.h"
 
 /* USB Device descriptor parameter */
-#define VENDOR_ID 0x6955
-#define PRODUCT_ID 0x2073
-#define DEVICE_VER 0x0001
-#define MANUFACTURER ibnuda
-#define PRODUCT ultra_orthodox
-#define DESCRIPTION boring board
-
-/* key matrix size */
-#define MATRIX_ROWS 8
-#define MATRIX_COLS 5
-
-/* COL2ROW, ROW2COL*/
-#define DIODE_DIRECTION COL2ROW
+#define VENDOR_ID       0x6955
+#define PRODUCT_ID      0x2073
+#define DEVICE_VER      0x0001
+#define MANUFACTURER    ibnuda
+#define PRODUCT         ultra_orthodox
+#define DESCRIPTION     boring board
 
 #define USE_SERIAL
 
@@ -54,6 +47,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   #define NO_ACTION_FUNCTION
 #endif
 
-#define TAPPING_TERM 200
-#define IGNORE_MOD_TAP_INTERRUPT
-#define COMBO_COUNT 15
+#define PERMISSIVE_HOLD

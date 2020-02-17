@@ -1,5 +1,7 @@
 #pragma once
 
+#include "ultra_orthodox.h"
+
 #include "quantum.h"
 
 #define ___ KC_NO

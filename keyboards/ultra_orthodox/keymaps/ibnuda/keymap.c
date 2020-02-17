@@ -47,13 +47,13 @@ enum {
 #define SFT_ESC   SFT_T(KC_ESC)
 
 // home row mods.
-#define CT_O RCTL_T(KC_O)
+#define CT_O LCTL_T(KC_O)
 #define CT_N RCTL_T(KC_N)
-#define SH_A RSFT_T(KC_A)
+#define SH_A LSFT_T(KC_A)
 #define SH_S RSFT_T(KC_S)
-#define AL_E RALT_T(KC_E)
+#define AL_E LALT_T(KC_E)
 #define AL_T RALT_T(KC_T)
-#define GU_I RGUI_T(KC_I)
+#define GU_I LGUI_T(KC_I)
 #define GU_D RGUI_T(KC_D)
 
 // layer toggle.
@@ -135,7 +135,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT(
     KC_ESC, KC_QUES,KC_UNDS,KC_F1,  KC_F2,      KC_F3,  KC_F4,  KC_MINS,KC_SLSH,KC_BSPC ,
     KC_LSFT,KC_TAB, KC_PGUP,KC_F5,  KC_F6,      KC_F7,  KC_F8,  KC_HOME,KC_LALT,KC_ENT  ,
-    KC_CLCK,KC_SLCK,KC_PGDN,KC_F9,  KC_F10,     KC_F11, KC_F12, KC_END, KC_INS, KC_SLSH ,
+    KC_CLCK,KC_SLCK,KC_PGDN,KC_F9,  RESET,      KC_F11, KC_F12, KC_END, KC_INS, KC_SLSH ,
                             ADDDD,  _______,    KC_DELT,ADDDD
 ),
 [_ADJUST] = LAYOUT(
@@ -145,3 +145,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             _______,_______,    _______,_______
 ),
 };
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+#ifdef CONSOLE_ENABLE
+    uprintf("KL: kc: %u, col: %u, row: %u, pressed: %u\n", keycode, record->event.key.col, record->event.key.row, record->event.pressed);
+#endif
+    return true;
+}

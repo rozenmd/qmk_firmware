@@ -2,6 +2,10 @@
 
 #define DEVICE_VER      0x0001
 
+/* key matrix size */
+#define MATRIX_ROWS 8
+#define MATRIX_COLS 5
+
 /*
  * Keyboard Matrix Assignments
  *
@@ -15,7 +19,12 @@
 #define MATRIX_ROW_PINS { B1, B3, B2, B6 }
 #define MATRIX_COL_PINS { C6, D7, E6, B4, B5 }
 
+/* COL2ROW, ROW2COL*/
+#define DIODE_DIRECTION COL2ROW
+
 // wiring of each half
-#define SOFT_SERIAL_PIN D0
+// #define SOFT_SERIAL_PIN D0
 
 #define USE_SERIAL
+
+#define MASTER_LEFT

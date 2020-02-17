@@ -1,1 +1,5 @@
-#include "ultra_orthodox.h"
+#include "rev1.h"
+
+void matrix_init_kb(void) {
+  matrix_init_user();
+}
