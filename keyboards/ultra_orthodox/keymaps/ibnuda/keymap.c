@@ -142,13 +142,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_EXLM,KC_AT,  KC_UP,  KC_LCBR,KC_RCBR,    KC_BSLS,KC_7,   KC_8,   KC_9,   KC_ASTR ,
     KC_HASH,KC_LEFT,KC_DOWN,KC_RGHT,KC_DLR,     KC_EQL, KC_4,   KC_5,   KC_6,   KC_0 ,
     KC_LBRC,KC_RBRC,KC_LPRN,KC_RPRN,KC_AMPR,    KC_GRV, KC_1,   KC_2,   KC_3,   KC_PLUS ,
-                            ADDDD,  _______,    ALT_ENT,RS_SPC
+                            ADDDD,  _______,    _______,_______
 ),
 [_LOWER] = LAYOUT(
     KC_ESC, KC_QUES,KC_UNDS,KC_F1,  KC_F2,      KC_F3,  KC_F4,  KC_MINS,KC_SLSH,KC_BSPC ,
     KC_LSFT,KC_TAB, KC_PGUP,KC_F5,  KC_F6,      KC_F7,  KC_F8,  KC_HOME,KC_LALT,KC_ENT  ,
     KC_CLCK,KC_SLCK,KC_PGDN,KC_F9,  KC_F10,     KC_F11, KC_F12, KC_END, KC_INS, KC_SLSH ,
-                            ADDDD,  _______,    KC_DELT,ADDDD
+                            _______,_______,    _______,ADDDD
 ),
 [_ADJUST] = LAYOUT(
     _______,EXPLR,  KC_UP,  PRVTAB, PRVWIN,     NXTWIN, NXTTAB, _______,_______,LCKGUI,
@@ -158,6 +158,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 };
 
+/*
 bool get_ignore_mod_tap_interrupt(uint16_t keycode) {
   switch (keycode) {
     case SH_S:
@@ -176,3 +177,5 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #endif
     return true;
 }
+
+*/

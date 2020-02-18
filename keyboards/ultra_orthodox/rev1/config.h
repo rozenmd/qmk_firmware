@@ -23,7 +23,7 @@
 #define DIODE_DIRECTION COL2ROW
 
 //#define PERMISSIVE_HOLD
-//#define IGNORE_MOD_TAP_INTERRUPT
+#define IGNORE_MOD_TAP_INTERRUPT
 
 // wiring of each half
 #define SOFT_SERIAL_PIN D0
