@@ -47,4 +47,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
   #define NO_ACTION_FUNCTION
 #endif
 
-#define PERMISSIVE_HOLD
+//#define PERMISSIVE_HOLD

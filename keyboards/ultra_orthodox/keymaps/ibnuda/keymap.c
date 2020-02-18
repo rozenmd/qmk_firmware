@@ -21,6 +21,7 @@ enum combos {
     COLON_COMMA,
     COMMA_DOT,
     DOT_P,
+    QUOT_Q,
     Q_J,
     J_K,
     A_O,
@@ -89,6 +90,7 @@ enum {
 const uint16_t PROGMEM colon_comma_combo[] = {KC_SCLN, KC_COMM, COMBO_END};
 const uint16_t PROGMEM comma_dot_combo[]   = {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM dot_p_combo[]       = {KC_DOT, KC_P, COMBO_END};
+const uint16_t PROGMEM quot_q_combo[]      = {KC_QUOT, KC_Q, COMBO_END};
 const uint16_t PROGMEM q_j_combo[]         = {KC_Q, KC_J, COMBO_END};
 const uint16_t PROGMEM j_k_combo[]         = {KC_J, KC_K, COMBO_END};
 const uint16_t PROGMEM a_o_combo[]         = {KC_A, KC_O, COMBO_END};
@@ -110,6 +112,7 @@ combo_t key_combos[COMBO_COUNT] = {
     [COLON_COMMA]   = COMBO(colon_comma_combo,  KC_TAB),
     [COMMA_DOT]     = COMBO(comma_dot_combo,    KC_QUES),
     [DOT_P]         = COMBO(dot_p_combo,        KC_UNDS),
+    [QUOT_Q]        = COMBO(quot_q_combo,       KC_ENT),
     [Q_J]           = COMBO(q_j_combo,          LCTL(KC_W)),
     [J_K]           = COMBO(j_k_combo,          KC_DELT),
     [A_O]           = COMBO(a_o_combo,          KC_LSFT),
@@ -144,7 +147,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_LOWER] = LAYOUT(
     KC_ESC, KC_QUES,KC_UNDS,KC_F1,  KC_F2,      KC_F3,  KC_F4,  KC_MINS,KC_SLSH,KC_BSPC ,
     KC_LSFT,KC_TAB, KC_PGUP,KC_F5,  KC_F6,      KC_F7,  KC_F8,  KC_HOME,KC_LALT,KC_ENT  ,
-    KC_CLCK,KC_SLCK,KC_PGDN,KC_F9,  RESET,      KC_F11, KC_F12, KC_END, KC_INS, KC_SLSH ,
+    KC_CLCK,KC_SLCK,KC_PGDN,KC_F9,  KC_F10,     KC_F11, KC_F12, KC_END, KC_INS, KC_SLSH ,
                             ADDDD,  _______,    KC_DELT,ADDDD
 ),
 [_ADJUST] = LAYOUT(
@@ -154,6 +157,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                             _______,_______,    _______,_______
 ),
 };
+
+bool get_ignore_mod_tap_interrupt(uint16_t keycode) {
+  switch (keycode) {
+    case SH_S:
+    case CT_N:
+    case AL_T:
+    case GU_D:
+      return true;
+    default:
+      return false;
+  }
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef CONSOLE_ENABLE
     uprintf("KL: kc: %u, col: %u, row: %u, pressed: %u\n", keycode, record->event.key.col, record->event.key.row, record->event.pressed);
