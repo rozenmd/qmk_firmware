@@ -22,7 +22,7 @@
 /* COL2ROW, ROW2COL*/
 #define DIODE_DIRECTION COL2ROW
 
-//#define PERMISSIVE_HOLD
+#define PERMISSIVE_HOLD
 #define IGNORE_MOD_TAP_INTERRUPT
 
 // wiring of each half

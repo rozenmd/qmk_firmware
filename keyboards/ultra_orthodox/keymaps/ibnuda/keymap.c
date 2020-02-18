@@ -24,9 +24,6 @@ enum combos {
     QUOT_Q,
     Q_J,
     J_K,
-    A_O,
-    O_E,
-    E_U,
 
     // right hand combinations.
     L_R,
@@ -67,10 +64,7 @@ enum {
 #define LW_I     LT(_LOWER, KC_I)
 
 // idk, man. not used, i guess.
-#define RAISE    MO(_RAISE)
-#define LOWER    MO(_LOWER)
 #define ADDDD    MO(_ADJUST)
-#define MUIS     MO(_MUIS)
 
 // common shortcuts for windows and linux that i use.
 #define NXTTAB LCTL(KC_PGDN)
@@ -93,9 +87,6 @@ const uint16_t PROGMEM dot_p_combo[]       = {KC_DOT, KC_P, COMBO_END};
 const uint16_t PROGMEM quot_q_combo[]      = {KC_QUOT, KC_Q, COMBO_END};
 const uint16_t PROGMEM q_j_combo[]         = {KC_Q, KC_J, COMBO_END};
 const uint16_t PROGMEM j_k_combo[]         = {KC_J, KC_K, COMBO_END};
-const uint16_t PROGMEM a_o_combo[]         = {KC_A, KC_O, COMBO_END};
-const uint16_t PROGMEM o_e_combo[]         = {KC_O, KC_E, COMBO_END};
-const uint16_t PROGMEM e_u_combo[]         = {KC_E, KC_U, COMBO_END};
 
 // right hand combinations.
 const uint16_t PROGMEM l_r_combo[]         = {KC_L, KC_R, COMBO_END};
@@ -115,9 +106,6 @@ combo_t key_combos[COMBO_COUNT] = {
     [QUOT_Q]        = COMBO(quot_q_combo,       KC_ENT),
     [Q_J]           = COMBO(q_j_combo,          LCTL(KC_W)),
     [J_K]           = COMBO(j_k_combo,          KC_DELT),
-    [A_O]           = COMBO(a_o_combo,          KC_LSFT),
-    [O_E]           = COMBO(o_e_combo,          KC_LCTL),
-    [E_U]           = COMBO(e_u_combo,          KC_LALT),
 
     // right hand combinations.
     [L_R]           = COMBO(l_r_combo,          KC_BSPC),
@@ -133,7 +121,7 @@ combo_t key_combos[COMBO_COUNT] = {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BASE] = LAYOUT(
     KC_SCLN,KC_COMM,KC_DOT, KC_P,   KC_Y,       KC_F,   KC_G,   KC_C,   KC_R,   KC_L,
-    KC_A,   KC_O,   KC_E,   KC_U,   KC_I,       GU_D,   KC_H,   AL_T,   CT_N,   SH_S,
+    SH_A,   CT_O,   AL_E,   KC_U,   GU_I,       GU_D,   KC_H,   AL_T,   CT_N,   SH_S,
     KC_QUOT,KC_Q,   KC_J,   KC_K,   KC_X,       KC_B,   KC_M,   KC_W,   KC_V,   KC_Z,
                             LW_BSPC,SFT_ESC,    ALT_ENT,RS_SPC
 ),
@@ -170,6 +158,7 @@ bool get_ignore_mod_tap_interrupt(uint16_t keycode) {
       return false;
   }
 }
+*/
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef CONSOLE_ENABLE
@@ -177,5 +166,3 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #endif
     return true;
 }
-
-*/
