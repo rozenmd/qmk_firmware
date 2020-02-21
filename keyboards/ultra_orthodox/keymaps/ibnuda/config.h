@@ -19,11 +19,3 @@
 // place overrides here
 
 // #include "../../config.h"
-
-#undef TAPPING_TERM
-#define TAPPING_TERM 200
-#define COMBO_TERM 100
-#define IGNORE_MOD_TAP_INTERRUPT
-//#define IGNORE_MOD_TAP_INTERRUPT_PER_KEY
-
-#define COMBO_COUNT 18
