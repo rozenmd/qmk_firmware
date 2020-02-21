@@ -221,7 +221,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BASE] = LAYOUT(
-    SM_CLN, KC_COMM,KC_DOT, KC_P,   KC_Y,                       KC_F,   KC_G,   KC_C,   KC_R,   KC_L,
+    KC_SCLN,KC_COMM,KC_DOT, KC_P,   KC_Y,                       KC_F,   KC_G,   KC_C,   KC_R,   KC_L,
     SH_A,   CT_O,   AL_E,   KC_U,   GU_I,                       GU_D,   KC_H,   AL_T,   CT_N,   SH_S,
     MU_QUOT,KC_Q,   KC_J,   KC_K,   KC_X,                       KC_B,   KC_M,   KC_W,   KC_V,   MU_Z,
     _______,_______,_______,_______,LW_BSPC,SFT_ESC,    ALT_ENT,RS_SPC, _______,_______,_______,_______
