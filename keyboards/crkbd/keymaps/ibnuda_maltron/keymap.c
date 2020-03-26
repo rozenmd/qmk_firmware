@@ -1,9 +1,5 @@
 #include QMK_KEYBOARD_H
 
-// Each layer gets a name for readability, which is then used in the keymap matrix below.
-// The underscores don't mean anything - you can have a layer called STUFF or any other name.
-// Layer names don't all need to be of the same length, obviously, and you can also skip them
-// entirely and just use numbers.
 #define _MALTRON 0
 #define _LOWER   1
 #define _RAISE   2
@@ -16,6 +12,7 @@ enum custom_keycodes {
   ADJUST,
 };
 
+/*
 enum combos {
   Q_P,
   P_Y,
@@ -42,8 +39,8 @@ const uint16_t PROGMEM j_g_combo[]        = {KC_J, KC_G, COMBO_END};
 const uint16_t PROGMEM l_z_combo[]        = {KC_L, KC_Z, COMBO_END};
 const uint16_t PROGMEM z_u_combo[]        = {KC_Z, KC_U, COMBO_END};
 const uint16_t PROGMEM u_m_combo[]        = {KC_U, KC_M, COMBO_END};
-const uint16_t PROGMEM ex_unds_combo[]    = {KC_X, KC_UNDS, COMBO_END};
-const uint16_t PROGMEM unds_k_combo[]     = {KC_UNDS, KC_K, COMBO_END};
+const uint16_t PROGMEM ex_unds_combo[]    = {KC_X, KC_MINS, COMBO_END};
+const uint16_t PROGMEM unds_k_combo[]     = {KC_MINS, KC_K, COMBO_END};
 const uint16_t PROGMEM k_w_combo[]        = {KC_K, KC_W, COMBO_END};
 
 combo_t key_combos[COMBO_COUNT] = {
@@ -61,17 +58,18 @@ combo_t key_combos[COMBO_COUNT] = {
   [UNDS_K]    = COMBO(unds_k_combo,     KC_APP),
   [K_W]       = COMBO(k_w_combo,        KC_DELT),
 };
+*/
 
 #define AL_ENT    ALT_T(KC_ENT)
 #define SH_BSPC   SFT_T(KC_BSPC)
 
-#define SH_A      RSFT_T(KC_A)
+#define SH_A      LSFT_T(KC_A)
 #define SH_R      RSFT_T(KC_R)
-#define CT_N      RCTL_T(KC_N)
+#define CT_N      LCTL_T(KC_N)
 #define CT_O      RCTL_T(KC_O)
-#define AL_I      RALT_T(KC_I)
+#define AL_I      LALT_T(KC_I)
 #define AL_H      RALT_T(KC_H)
-#define GU_F      RGUI_T(KC_F)
+#define GU_F      LGUI_T(KC_F)
 #define GU_D      RGUI_T(KC_D)
 
 #define LW_E      LT(_LOWER, KC_E)
@@ -95,9 +93,9 @@ combo_t key_combos[COMBO_COUNT] = {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_MALTRON] = LAYOUT( \
-        KC_TAB, KC_Q,   KC_P,   KC_Y,   KC_C,   KC_B,                      KC_V,   KC_M,   KC_U,   KC_Z,  KC_L,   KC_BSPC,\
-        KC_LCTL,KC_A,   KC_N,   KC_I,   KC_S,   KC_F,                      KC_D,   KC_T,   KC_H,   KC_O,  KC_R,   KC_QUOT,\
-        KC_LSFT,KC_COMM,KC_DOT, KC_J,   KC_G,   KC_SCLN,                   KC_SLSH,KC_W,   KC_K,   KC_DOT,KC_MINS,KC_RSFT,\
+        KC_TAB, KC_Q,   KC_P,   KC_Y,   KC_C,   KC_B,                      KC_V,   KC_M,   KC_U,   KC_Z,   KC_L,   KC_BSPC,\
+        KC_LCTL,SH_A,   CT_N,   AL_I,   KC_S,   GU_F,                      GU_D,   KC_T,   AL_H,   CT_O,   SH_R,   KC_QUOT,\
+        KC_LSFT,KC_COMM,KC_DOT, KC_J,   KC_G,   KC_SCLN,                   KC_SLSH,KC_W,   KC_K,   KC_MINS,KC_X,KC_RSFT,\
                                         LW_E,   SH_BSPC,LOWER,     RAISE,  AL_ENT, RS_SPC \
     ),
     [_LOWER] = LAYOUT( \
