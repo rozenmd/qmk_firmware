@@ -25,6 +25,7 @@ enum combos {
     QUOT_Q,
     Q_J,
     J_K,
+    K_X,
 
     // right hand combinations.
     L_R,
@@ -33,6 +34,7 @@ enum combos {
     G_F,
     V_W,
     W_M,
+    M_B,
 
     // both hands combinations.
     J_W,
@@ -90,6 +92,7 @@ const uint16_t PROGMEM p_y_combo[]         = {KC_P, KC_Y, COMBO_END};
 const uint16_t PROGMEM quot_q_combo[]      = {KC_QUOT, KC_Q, COMBO_END};
 const uint16_t PROGMEM q_j_combo[]         = {KC_Q, KC_J, COMBO_END};
 const uint16_t PROGMEM j_k_combo[]         = {KC_J, KC_K, COMBO_END};
+const uint16_t PROGMEM k_x_combo[]         = {KC_K, KC_X, COMBO_END};
 
 // right hand combinations.
 const uint16_t PROGMEM l_r_combo[]         = {KC_L, KC_R, COMBO_END};
@@ -98,6 +101,7 @@ const uint16_t PROGMEM c_g_combo[]         = {KC_C, KC_G, COMBO_END};
 const uint16_t PROGMEM g_f_combo[]         = {KC_G, KC_F, COMBO_END};
 const uint16_t PROGMEM v_w_combo[]         = {KC_V, KC_W, COMBO_END};
 const uint16_t PROGMEM w_m_combo[]         = {KC_W, KC_M, COMBO_END};
+const uint16_t PROGMEM m_b_combo[]         = {KC_M, KC_B, COMBO_END};
 
 // both hand combinations.
 const uint16_t PROGMEM j_w_combo[]         = {KC_J, KC_W, COMBO_END};
@@ -111,6 +115,7 @@ combo_t key_combos[COMBO_COUNT] = {
     [QUOT_Q]        = COMBO(quot_q_combo,       KC_ENT),
     [Q_J]           = COMBO(q_j_combo,          LCTL(KC_W)),
     [J_K]           = COMBO(j_k_combo,          KC_DELT),
+    [K_X]           = COMBO(k_x_combo,          KC_TILD),
 
     // right hand combinations.
     [L_R]           = COMBO(l_r_combo,          KC_BSPC),
@@ -119,6 +124,7 @@ combo_t key_combos[COMBO_COUNT] = {
     [G_F]           = COMBO(g_f_combo,          KC_BSLS),
     [V_W]           = COMBO(v_w_combo,          KC_APP),
     [W_M]           = COMBO(w_m_combo,          KC_DELT),
+    [M_B]           = COMBO(m_b_combo,          KC_GRV),
 
     // both hand combinations.
     [J_W]           = COMBO(j_w_combo,          KC_ENT),
