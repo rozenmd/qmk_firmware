@@ -22,6 +22,7 @@ enum combos {
     COMMA_DOT,
     DOT_P,
     P_Y,
+    COMMA_P,
     QUOT_Q,
     Q_J,
     J_K,
@@ -31,6 +32,7 @@ enum combos {
     L_R,
     R_C,
     C_G,
+    R_G,
     G_F,
     V_W,
     W_M,
@@ -96,6 +98,7 @@ const uint16_t PROGMEM colon_comma_combo[] = {KC_SCLN, KC_COMM, COMBO_END};
 const uint16_t PROGMEM comma_dot_combo[]   = {KC_COMM, KC_DOT, COMBO_END};
 const uint16_t PROGMEM dot_p_combo[]       = {KC_DOT, KC_P, COMBO_END};
 const uint16_t PROGMEM p_y_combo[]         = {KC_P, KC_Y, COMBO_END};
+const uint16_t PROGMEM comma_p_combo[]     = {KC_COMM, KC_P, COMBO_END};
 const uint16_t PROGMEM quot_q_combo[]      = {KC_QUOT, KC_Q, COMBO_END};
 const uint16_t PROGMEM q_j_combo[]         = {KC_Q, KC_J, COMBO_END};
 const uint16_t PROGMEM j_k_combo[]         = {KC_J, KC_K, COMBO_END};
@@ -105,6 +108,7 @@ const uint16_t PROGMEM k_x_combo[]         = {KC_K, KC_X, COMBO_END};
 const uint16_t PROGMEM l_r_combo[]         = {KC_L, KC_R, COMBO_END};
 const uint16_t PROGMEM r_c_combo[]         = {KC_R, KC_C, COMBO_END};
 const uint16_t PROGMEM c_g_combo[]         = {KC_C, KC_G, COMBO_END};
+const uint16_t PROGMEM r_g_combo[]         = {KC_R, KC_G, COMBO_END};
 const uint16_t PROGMEM g_f_combo[]         = {KC_G, KC_F, COMBO_END};
 const uint16_t PROGMEM v_w_combo[]         = {KC_V, KC_W, COMBO_END};
 const uint16_t PROGMEM w_m_combo[]         = {KC_W, KC_M, COMBO_END};
@@ -119,6 +123,7 @@ combo_t key_combos[COMBO_COUNT] = {
     [COMMA_DOT]     = COMBO(comma_dot_combo,    KC_QUES),
     [DOT_P]         = COMBO(dot_p_combo,        KC_UNDS),
     [P_Y]           = COMBO(p_y_combo,          KC_PIPE),
+    [COMMA_P]       = COMBO(comma_p_combo,      PRVTAB),
     [QUOT_Q]        = COMBO(quot_q_combo,       KC_ENT),
     [Q_J]           = COMBO(q_j_combo,          LCTL(KC_W)),
     [J_K]           = COMBO(j_k_combo,          KC_DELT),
@@ -128,6 +133,7 @@ combo_t key_combos[COMBO_COUNT] = {
     [L_R]           = COMBO(l_r_combo,          KC_BSPC),
     [R_C]           = COMBO(r_c_combo,          KC_SLSH),
     [C_G]           = COMBO(c_g_combo,          KC_MINS),
+    [R_G]           = COMBO(r_g_combo,          NXTTAB),
     [G_F]           = COMBO(g_f_combo,          KC_BSLS),
     [V_W]           = COMBO(v_w_combo,          KC_APP),
     [W_M]           = COMBO(w_m_combo,          KC_DELT),
