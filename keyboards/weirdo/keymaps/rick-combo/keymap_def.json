@@ -1,0 +1,144 @@
+{
+    "keys": [
+        "TOP1", "TOP2", "TOP3", "TOP4", "TOP5",     "TOP6", "TOP7", "TOP8", "TOP9", "TOP10",
+        "MID1", "MID2", "MID3", "MID4", "MID5",     "MID6", "MID7", "MID8", "MID9", "MID10",
+        "BOT1", "BOT2", "BOT3", "BOT4", "BOT5",     "BOT6", "BOT7", "BOT8", "BOT9", "BOT10",
+                                        "THU1",     "THU2"
+    ],
+    "parameters": {
+        "layout_function_name": "LAYOUT",
+        "chord_timeout": 100,
+        "dance_timeout": 200,
+        "leader_timeout": 750,
+        "tap_timeout": 50,
+        "command_max_length": 5,
+        "leader_max_length": 5,
+        "dynamic_macro_max_length": 20,
+        "string_max_length": 16,
+        "long_press_multiplier": 3,
+        "default_pseudolayer": "DVORAK"
+    },
+    "layers": [
+        {
+            "type": "auto"
+        },
+        {
+            "type": "manual",
+            "keycodes": [
+                "KC_SCLN", "KC_COMM", "KC_DOT", "KC_P",    "KC_Y",      "KC_F",   "KC_G", "KC_C", "KC_R", "KC_L",
+                "KC_A",    "KC_O",    "KC_E",   "KC_U",    "KC_I",      "KC_D",   "KC_H", "KC_T", "KC_N", "KC_S",
+                "KC_QUOT", "KC_Q",    "KC_J",   "KC_K",    "KC_X",      "KC_B",   "KC_M", "KC_W", "KC_V", "KC_Z",
+                                                           "KC_BSPC",   "KC_SPC"
+            ]
+        }
+    ],
+    "chord_sets": [
+        {
+            "name": "rows",
+            "chords": [
+                ["TOP1"], ["TOP2"], ["TOP3"], ["TOP4"], ["TOP5"], ["TOP6"], ["TOP7"], ["TOP8"], ["TOP9"], ["TOP10"],
+                ["TOP1", "MID1"], ["TOP2", "MID2"], ["TOP3", "MID3"], ["TOP4", "MID4"], ["TOP5", "MID5"], ["TOP6", "MID6"], ["TOP7", "MID7"], ["TOP8", "MID8"], ["TOP9", "MID9"], ["TOP10", "MID10"],
+                ["MID1"], ["MID2"], ["MID3"], ["MID4"], ["MID5"], ["MID6"], ["MID7"], ["MID8"], ["MID9"], ["MID10"],
+                ["MID1", "BOT1"], ["MID2", "BOT2"], ["MID3", "BOT3"], ["MID4", "BOT4"], ["MID5", "BOT5"], ["MID6", "BOT6"], ["MID7", "BOT7"], ["MID8", "BOT8"], ["MID9", "BOT9"], ["MID10", "BOT10"],
+                ["BOT1"], ["BOT2"], ["BOT3"], ["BOT4"], ["BOT5"], ["BOT6"], ["BOT7"], ["BOT8"], ["BOT9"], ["BOT10"],
+                ["THU1"], ["THU2"]
+            ]
+        },
+        {
+            "name": "cols",
+            "chords": [
+               ["TOP1", "TOP2"], ["TOP2", "TOP3"], ["TOP3", "TOP4"], ["TOP4", "TOP5"], ["TOP5", "TOP6"], ["TOP7", "TOP8"], ["TOP8", "TOP9"], ["TOP9", "TOP10"],
+               ["MID1", "MID2"], ["MID2", "MID3"], ["MID3", "MID4"], ["MID4", "MID5"], ["MID5", "MID6"], ["MID7", "MID8"], ["MID8", "MID9"], ["MID9", "MID10"],
+               ["BOT1", "BOT2"], ["BOT2", "BOT3"], ["BOT3", "BOT4"], ["BOT4", "BOT5"], ["BOT5", "BOT6"], ["BOT7", "BOT8"], ["BOT8", "BOT9"], ["BOT9", "BOT10"]
+            ]
+        }
+  ],
+  "pseudolayers": [
+      {
+          "name": "DVORAK",
+          "chords":[
+              {
+                  "type": "chord_set",
+                  "set": "rows",
+                  "keycodes": [
+                      ";", ",", ".", "P", "Y",        "F", "G", "C", "R", "L",
+                      "1", "2", "3", "4", "5",        "6", "7", "8", "9", "0",
+                      "A", "I", "E", "U", "I",        "D", "H", "T", "N", "S",
+                      " ", " ", " ", " ", " ",        " ", " ", " ", " ", " ",
+                      "'", "Q", "J", "K", "X",        "B", "M", "W", "V", "Z",
+                                           "",        ""
+                  ]
+              },
+              {
+                  "type": "chord_set",
+                  "set": "cols",
+                  "keycodes": [
+                    "TAB", "?", "_", "|",    "\\", "-", "/",   " ",
+                    " ",   " ", " ", " ",    " ",  " ", " ",   " ",
+                    "ENT", " ", " ", "~",    "`",  " ", "APP", " "
+                  ]
+              },
+              {
+                  "type": "visual_array",
+                  "keys": ["THU1", "THU2"],
+                  "dictionary": [
+                      ["X",     " ", "KL(BSPC, FNC)"],
+                      [" ",     "X", "KL(SPC, SYM)"]
+                ]
+              },
+              {
+                  "type": "visual_array",
+                  "keys": ["MID1", "MID2", "MID3", "MID4", "MID5", "MID6", "MID7", "MID8", "MID9", "MID10"],
+                  "dictionary": [
+                      ["X", " ", " ", " ", " ",         " ", " ", " ", " ", " ",    "KM(A, RSFT)"],
+                      [" ", "X", " ", " ", " ",         " ", " ", " ", " ", " ",    "KM(O, RCTL)"],
+                      [" ", " ", "X", " ", " ",         " ", " ", " ", " ", " ",    "KM(E, RALT)"],
+                      [" ", " ", " ", " ", "X",         " ", " ", " ", " ", " ",    "KM(I, RGUI)"],
+
+                      [" ", " ", " ", " ", " ",         "X", " ", " ", " ", " ",    "KM(D, RGUI)"],
+                      [" ", " ", " ", " ", " ",         " ", " ", "X", " ", " ",    "KM(T, RCTL)"],
+                      [" ", " ", " ", " ", " ",         " ", " ", " ", "X", " ",    "KM(N, RCTL)"],
+                      [" ", " ", " ", " ", " ",         " ", " ", " ", " ", "X",    "KM(S, RSFT)"]
+                ]
+              }
+          ]
+      },
+      {
+          "name": "SYM",
+          "chords":[
+              {
+                  "type": "chord_set",
+                  "set": "rows",
+                  "keycodes": [
+                      "KC_EXLM", "KC_AT",   "KC_UP",   "KC_LCBR", "KC_RCBR",       "KC_BSLS", "KC_7", "KC_8", "KC_9", "KC_ASTR",
+                      " ",       " ",       " ",       " ",       " ",             " ",       " ",    " ",    " ",    " ",
+                      "KC_HASH", "KC_LEFT", "KC_DOWN", "KC_RGHT", "KC_DLR",        "KC_EQL",  "KC_4", "KC_5", "KC_9", "KC_0",
+                      " ",       " ",       " ",       " ",       " ",             " ",       " ",    " ",    " ",    " ",
+                      "KC_LBRC", "KC_RBRC", "KC_LPRN", "KC_RPRN", "KC_AMPR",       "KC_GRV",  "KC_1", "KC_2", "KC_3", "KC_PLUS",
+                                                       " ",       " ",             " ",       " "
+                  ]
+              }
+          ]
+      },
+      {
+          "name": "FNC",
+          "chords":[
+              {
+                  "type": "chord_set",
+                  "set": "rows",
+                  "keycodes": [
+                      "KC_ESC",  "KC_QUES", "KC_UNDS", "KC_F1",   "KC_F2",        "KC_F3",   "KC_F4",  "KC_MINS", "KC_SLSH", "KC_BSPC",
+                      " ",       " ",       " ",       " ",       " ",            " ",       " ",      " ",       " ",       " ",
+                      "KC_LSFT", "KC_TAB",  "KC_PGUP", "KC_F5",   "KC_F6",        "KC_F7",   "KC_F8",  "KC_HOME", "KC_LALT", "KC_ENT",
+                      " ",       " ",       " ",       " ",       " ",            " ",       " ",      " ",       " ",       " ",
+                      "KC_CLCK", "KC_SLCK", "KC_PGDN", "KC_F9",   "KC_F10",       "KC_F11",  "KC_F12", "KC_END",  "KC_INS",  "KC_BSLS",
+                                                       " ",       " ",             " ",       " "
+                  ]
+              }
+          ]
+      }
+  ],
+  "leader_sequences": [],
+  "extra_code": "",
+  "extra_dependencies": []
+}
