@@ -1,6 +1,5 @@
 /*
-Copyright 2019 @foostan
-Copyright 2020 Drashna Jaelre <@drashna>
+Copyright 2020 Ibnu D. Aji
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -17,9 +16,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include QMK_KEYBOARD_H
-
-
-extern uint8_t is_master;
 
 // enum for combos.
 enum combos {
@@ -156,26 +152,27 @@ combo_t key_combos[COMBO_COUNT] = {
     // both hand combinations.
     [J_W]           = COMBO(j_w_combo,          KC_ENT),
 };
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [_BASE] = LAYOUT_split_3x6_3(
+  [_BASE] = LAYOUT(
       KC_TAB, KC_SCLN,KC_COMM,KC_DOT, KC_P,   KC_Y,       KC_F,   KC_G,   KC_C,   KC_R,   KC_L,   KC_BSPC,\
       KC_LCTL,SH_A,   CT_O,   AL_E,   KC_U,   GU_I,       GU_D,   KC_H,   AL_T,   CT_N,   SH_S,   KC_QUOT,\
       KC_LSFT,KC_QUOT,KC_Q,   KC_J,   KC_K,   KC_X,       KC_B,   KC_M,   KC_W,   KC_V,   KC_Z,   KC_RSFT,\
                               LOWER,  LW_BSPC,SFT_ESC,    ALT_ENT,RS_SPC, RAISE
   ),
-  [_RAISE] = LAYOUT_split_3x6_3(
+  [_RAISE] = LAYOUT(
       KC_TAB, KC_EXLM,KC_AT,  KC_UP,  KC_LCBR,KC_RCBR,    KC_BSLS,KC_7,   KC_8,   KC_9,   KC_ASTR,KC_BSPC,\
       KC_LCTL,KC_HASH,KC_LEFT,KC_DOWN,KC_RGHT,KC_DLR,     KC_EQL, KC_4,   KC_5,   KC_6,   KC_0,   KC_QUOT,\
       KC_LSFT,KC_LBRC,KC_RBRC,KC_LPRN,KC_RPRN,KC_AMPR,    KC_GRV, KC_1,   KC_2,   KC_3,   KC_PLUS,KC_RSFT,\
                               LOWER,  ADDDD  ,_______,    _______,_______,RAISE
   ),
-  [_LOWER] = LAYOUT_split_3x6_3(
+  [_LOWER] = LAYOUT(
       KC_TAB, KC_ESC, KC_QUES,KC_UNDS,KC_F1,  KC_F2,      KC_F3,  KC_F4,  KC_MINS,KC_SLSH,KC_BSPC,KC_BSPC,\
       KC_LCTL,KC_LSFT,KC_TAB, KC_PGUP,KC_F5,  KC_F6,      KC_F7,  KC_F8,  KC_HOME,KC_LALT,KC_ENT, KC_QUOT,\
       KC_LSFT,KC_CLCK,KC_SLCK,KC_PGDN,KC_F9,  KC_F10,     KC_F11, KC_F12, KC_END, KC_INS, KC_SLSH,KC_RSFT,\
                               LOWER,  _______,_______,    _______,ADDDD,  RAISE
   ),
-  [_ADJUST] = LAYOUT_split_3x6_3(
+  [_ADJUST] = LAYOUT(
       KC_TAB, _______,EXPLR,  KC_UP,  PRVTAB, PRVWIN,     NXTWIN, NXTTAB, _______,_______,LCKGUI, KC_BSPC,\
       KC_LCTL,TSKMGR, KC_LEFT,KC_DOWN,KC_RGHT,UPTAB,      DNTAB,  KC_ENT, KC_LGUI,_______,CALDL,  KC_QUOT,\
       KC_LSFT,_______,CLSGUI, _______,CONPST, RESET,      _______,_______,_______,_______,_______,KC_RSFT,\
