@@ -15,6 +15,30 @@
  */
 #include QMK_KEYBOARD_H
 
+// Tap Dance keycodes
+enum td_keycodes {
+    SFT_ESC
+};
+
+// Define a type containing as many tapdance states as you need
+typedef enum {
+    SINGLE_TAP,
+    SINGLE_HOLD,
+    DOUBLE_SINGLE_TAP
+} td_state_t;
+
+// Create a global instance of the tapdance state type
+static td_state_t td_state;
+
+// Declare your tapdance functions:
+
+// Function to determine the current tapdance state
+uint8_t cur_dance(qk_tap_dance_state_t *state);
+
+// `finished` and `reset` functions for each tapdance keycode
+void sftesc_finished(qk_tap_dance_state_t *state, void *user_data);
+void sftesc_reset(qk_tap_dance_state_t *state, void *user_data);
+
 // enum for combos.
 enum combos {
     // left hand combinations.
@@ -65,7 +89,8 @@ enum custom_keycodes {
 
 // thumb keys.
 #define ALT_ENT   ALT_T(KC_ENT)
-#define SFT_ESC   SFT_T(KC_ESC)
+// #define SFT_ESC   SFT_T(KC_ESC)
+#define TSF_ESC   TD(SFT_ESC)
 
 // home row mods.
 #define CT_O LCTL_T(KC_O)
@@ -166,7 +191,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_SCLN,KC_COMM,KC_DOT, KC_P,   KC_Y,       KC_F,   KC_G,   KC_C,   KC_R,   KC_L,
     SH_A,   CT_O,   AL_E,   MV_U,   GU_I,       GU_D,   KC_H,   AL_T,   CT_N,   SH_S,
     KC_QUOT,KC_Q,   KC_J,   KC_K,   KC_X,       KC_B,   KC_M,   KC_W,   KC_V,   KC_Z,
-                    KC_LGUI,LW_BSPC,SFT_ESC,    ALT_ENT,RS_SPC, RAISE
+                    KC_LGUI,LW_BSPC,TSF_ESC,    ALT_ENT,RS_SPC, RAISE
 ),
 
 [_RAISE] = LAYOUT_split_3x5_3(
@@ -193,6 +218,48 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,_______,_______,_______,_______,     _______,KC_PGDN,KC_ENT, _______,_______,
                     _______,_______,_______,     _______,_______,_______
 ),
+};
+
+uint8_t cur_dance(qk_tap_dance_state_t *state) {
+    if (state->count == 1) {
+        if (state->interrupted || !state->pressed) return SINGLE_TAP;
+        else return SINGLE_HOLD;
+    }
+
+    if (state->count == 2) return DOUBLE_SINGLE_TAP;
+    else return 3;
+}
+
+// Handle the possible states for each tapdance keycode you define:
+void sftesc_finished(qk_tap_dance_state_t *state, void *user_data) {
+    td_state = cur_dance(state);
+    switch (td_state) {
+        case SINGLE_TAP:
+            register_code16(KC_ESC);
+            break;
+        case SINGLE_HOLD:
+            register_mods(MOD_BIT(KC_LSFT));
+            break;
+        case DOUBLE_SINGLE_TAP:
+            register_code16(KC_ENT);
+    }
+}
+
+void sftesc_reset(qk_tap_dance_state_t *state, void *user_data) {
+    switch (td_state) {
+        case SINGLE_TAP:
+            unregister_code16(KC_ESC);
+            break;
+        case SINGLE_HOLD:
+            unregister_mods(MOD_BIT(KC_LSFT));
+            break;
+        case DOUBLE_SINGLE_TAP:
+            unregister_code16(KC_ENT);
+    }
+}
+
+qk_tap_dance_action_t tap_dance_actions[] = {
+    [SFT_ESC] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, sftesc_finished, sftesc_reset)
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
