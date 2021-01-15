@@ -15,37 +15,6 @@
  */
 #include QMK_KEYBOARD_H
 
-// enum for combos.
-enum combos {
-    // left hand combinations.
-    COLON_COMMA,
-    COMMA_DOT,
-    DOT_P,
-    DOT_Y,
-    P_Y,
-    COMMA_P,
-    QUOT_Q,
-    Q_J,
-    J_K,
-    Q_K,
-    K_X,
-
-    // right hand combinations.
-    L_R,
-    R_C,
-    C_G,
-    R_G,
-    C_F,
-    G_F,
-    Z_V,
-    V_W,
-    W_M,
-    V_M,
-    M_B,
-
-    // both hands combinations.
-    J_W,
-};
 
 enum {
     _BASE,
@@ -103,6 +72,37 @@ enum custom_keycodes {
 #define CLSGUI LALT(KC_F4)
 
 #ifdef COMBO_ENABLE
+// enum for combos.
+enum combos {
+    // left hand combinations.
+    COLON_COMMA,
+    COMMA_DOT,
+    DOT_P,
+    DOT_Y,
+    P_Y,
+    COMMA_P,
+    QUOT_Q,
+    Q_J,
+    J_K,
+    Q_K,
+    K_X,
+
+    // right hand combinations.
+    L_R,
+    R_C,
+    C_G,
+    R_G,
+    C_F,
+    G_F,
+    Z_V,
+    V_W,
+    W_M,
+    V_M,
+    M_B,
+
+    // both hands combinations.
+    J_W,
+};
 // left hand combinations.
 const uint16_t PROGMEM colon_comma_combo[] = {KC_SCLN, KC_COMM, COMBO_END};
 const uint16_t PROGMEM comma_dot_combo[]   = {KC_COMM, KC_DOT, COMBO_END};

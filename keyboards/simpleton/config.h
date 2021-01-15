@@ -13,6 +13,7 @@
   * You should have received a copy of the GNU General Public License 
   * along with this program.  If not, see <http://www.gnu.org/licenses/>. 
   */
+
 #pragma once
 
 #include "config_common.h"
@@ -20,15 +21,16 @@
 #define VENDOR_ID 0x1209
 #define PRODUCT_ID 0x6996
 #define DEVICE_VER 0x0001
-
 #define MANUFACTURER Ibnu Daru Aji
 #define PRODUCT Simpleton
 
 #define MATRIX_ROWS 4
 #define MATRIX_COLS 10
-#define MATRIX_COL_PINS { B5, B6, B7, B8, B9, A4, A5, A6, A7, B0 }
+
 #define MATRIX_ROW_PINS { A0, A1, A2, A3 }
+#define MATRIX_COL_PINS { B5, B6, B7, B8, B9, A4, A5, A6, A7, B0 }
+#define UNUSED_PINS
+
 #define DIODE_DIRECTION COL2ROW
 
-/* Set 0 if debouncing isn't needed */
-#define DEBOUNCE 5
+#define TAPPING_TERM 100
