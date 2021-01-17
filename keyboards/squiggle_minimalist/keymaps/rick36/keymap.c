@@ -66,7 +66,6 @@ enum custom_keycodes {
 // thumb keys.
 #define ALT_ENT   ALT_T(KC_ENT)
 #define SFT_ESC   SFT_T(KC_ESC)
-//#define TSF_ESC   TD(SFT_ESC)
 
 // home row mods.
 #define CT_O LCTL_T(KC_O)
