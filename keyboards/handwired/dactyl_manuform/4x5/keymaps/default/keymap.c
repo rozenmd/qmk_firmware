@@ -13,6 +13,8 @@
 #define CTL_BSPC CTL_T(KC_BSPC)
 #define ALT_SPC  ALT_T(KC_SPC)
 #define SFT_ENT  SFT_T(KC_ENT)
+#define RS_SPC   LT(_RAISE, KC_SPC)
+#define LW_BSPC  LT(_RAISE, KC_BSPC)
 
 #define KC_ML KC_MS_LEFT
 #define KC_MR KC_MS_RIGHT
@@ -52,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_A, KC_S, KC_D,    KC_F,    KC_G,                                       KC_H, KC_J,    KC_K,    KC_L,   KC_SCLN, \
   KC_Z, KC_X, KC_C,    KC_V,    KC_B,                                       KC_N, KC_M,    KC_COMM, KC_DOT, KC_QUOT, \
               KC_LBRC, KC_RBRC,                                                   KC_MINS, KC_EQL,                   \
-                                      SFT_ESC, CTL_BSPC,  ALT_SPC, SFT_ENT,                                          \
+                                      SFT_ESC, LW_BSPC,   RS_SPC,  SFT_ENT,                                          \
                                       KC_TAB,  KC_HOME,   KC_END,  KC_DEL,                                           \
                                       RAISE,   KC_GRV,    KC_LGUI, LOWER
 ),
@@ -81,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_RAISE] = LAYOUT( \
   ____, ____,  KC_MU, ____,  ____,                          KC_VOLU, ____,    KC_UP,   ____,     KC_PGUP,   \
   ____, KC_ML, KC_MD, KC_MR, ____,                          KC_MUTE, KC_LEFT, KC_DOWN, KC_RIGHT, KC_PGDOWN, \
-  ____, ____,  ____,  ____,  ____,                          KC_VOLD, KC_SLSH, KC_BSLS, KC_QUES,  KC_PIPE,   \
+  ____, ____,  ____,  ____,  RESET,                         KC_VOLD, KC_SLSH, KC_BSLS, KC_QUES,  KC_PIPE,   \
         ____,  ____,                                                          KC_MB1,  KC_MB2,              \
                                    ____, ____,  ____, ____,                                                 \
                                    ____, ____,  ____, ____,                                                 \
